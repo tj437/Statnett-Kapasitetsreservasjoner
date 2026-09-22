@@ -1,0 +1,28 @@
+﻿Statnett saksnr.,Tilko saksnr.,Stasjon for tilknytning i transmisjonsnettet,Områdeplan,Prisområde,Statnetts kunde,Sluttkunde,Næringstype,Dato - tilbaketrukket kapasitet,Kunde og tilknytningsansvarlig,Tilbaketrukket kapasitet (MW),Opprinnelig reservert kapasitet (MW),Gjeldende reservert kapasitet (MW)
+21/00091,,Kjelland TRA,Sør Rogaland og Agder,NO2,Lnett AS,Enida,Vannkraft,2025-04-01,Arne Utne,9.4,9.4,
+21/00195,,Førre TRA,Bergen og Haugalandet,NO2,Fagne AS,"Segadal (3,7 MW) og Osane (2,7 MW) kraftverk.",Vannkraft,2024-11-06,Magnus Øverby Tennøe,6.4,6.4,0
+21/00198,,Borgund KRA/TRA,Hallingdal og Ringerike,NO5,Sygnir AS,,Vannkraft,2025-01-20,Hans Olav Ween,8.2,34.2,0
+21/00228,,Kjelland TRA,Sør Rogaland og Agder,NO2,Lnett AS,Dalane Kraft AS,Vannkraft,2025-04-01,Arne Utne,20,20,
+23/00832,ELB129,Tegneby TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Solgrid Ørje AS,Solkraft,2025-02-23,Karoline Josefine Gudbjerg,1.4,15,13.6
+23/00845,ELB120,Hasle TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Hafslund Kraft AS,Vannkraft,2025-12-08,Karoline Josefine Gudbjerg,85,85,
+23/01090,,Håvik TRA,Bergen og Haugalandet,NO2,Energidepartementet,Havvindaktører,Offshore vind,2025-03-28,Magnus Øverby Tennøe,1000,1500,500
+23/01103,ELB1507,Skaidi TRA,Nord,NO4,Lucerna AS,GoliatVind AS,Vindkraft,2026-06-08,Lars Erik Johansen,75,75,0
+23/01106,,Ringerike TRA,Hallingdal og Ringerike,NO1,Glitre Nett AS,Solgrid AS - Sokna,Solkraft,2025-04-08,Heidi Hellesvik Ringstad,15,15,0
+23/01135,ELB160,Halden TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Aneo AS,Solkraft,2026-08-20,Karoline Josefine Gudbjerg,11.5,27.5,16
+23/01234,,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Sauland Kraftverk AS,Vannkraft,2025-06-22,Geir Kåsa,76,76,
+23/01305,ELB185,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Solgrid AS,Solkraft,2026-05-15,Karoline Josefine Gudbjerg,26.3,26.3,
+23/01403,ELB178,Minne TRA,Innlandet,NO1,Elvia As,Solgrid AS,Solkraft,2026-02-11,Heidi Hellesvik Ringstad,13.78,13.78,
+23/01405,ELB124,Vardal TRA,Innlandet,NO1,Elvia As,Solgrid AS,Solkraft,2024-02-10,Heidi Hellesvik Ringstad,41,81,40
+23/01408,,Follo TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Solgrid Hauer,Solkraft,2025-03-06,Karoline Josefine Gudbjerg,10,10,0
+23/01431,ELB230,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Solgrid AS,Solkraft,2026-01-14,Karoline Josefine Gudbjerg,8.4,8.4,
+24/01469,ELB2292,Grenland TRA,Telemark og Vestfold,NO2,Lede AS,Pyur Energy AS,Solkraft,2026-06-03,Geir Kåsa,12.7,12.7,
+24/01567,ELB1805,Tveiten TRA,Telemark og Vestfold,NO2,Lede AS,Skagerak Kraft AS,Solkraft,2026-03-09,Geir Kåsa,20.7,41,20.3
+24/01576,ELB1833,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Skagerak Kraft AS,Solkraft,2026-03-09,Geir Kåsa,3.9,19,15.1
+24/01577,ELB1797,Grenland TRA,Telemark og Vestfold,NO2,Lede AS,Pyur Energy AS,Solkraft,2026-03-29,Geir Kåsa,51,51,
+24/01583,ELB201,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Solutvikling AS,Solkraft,,Karoline Josefine Gudbjerg,16,16,
+24/01772,ELB2295,Grenland TRA,Telemark og Vestfold,NO2,Lede AS,Greenstat Energy AS,Solkraft,2026-05-27,Geir Kåsa,5,5,
+24/01907,ELB1703,Midtfjellet KRA/TRA,Bergen og Haugalandet,NO2,Midtfjellet Vindkraft AS,Midtfjellet Vindkraft AS,Vindkraft,,Magnus Øverby Tennøe,150,150,
+25/01936,ELB196,Hasle TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Solgrid AS,Solkraft,2026-05-07,Karoline Josefine Gudbjerg,20,30,10
+25/01971,ELB1126,Hadeland TRA,Hallingdal og Ringerike,NO1,Glitre Nett AS,Hafslund Magnora Sol AS,Solkraft,,Heidi Hellesvik Ringstad,25,25,
+25/02192,ELB297,Halden TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Zephyr AS,Vindkraft,2026-01-21,Karoline Josefine Gudbjerg,50,50,
+25/02317,ELB439,Hasle TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Hafslund Magnora Sol AS,Solkraft,2026-08-03,Karoline Josefine Gudbjerg,28,28,
