@@ -59,6 +59,12 @@ svg.map{width:100%;height:auto;display:block}
 .card .tot{font-size:.3px;fill:#C6C6B6}
 .card .bl{font-size:.27px;fill:#C6C6B6}
 .card .bv{font-size:.29px;font-weight:600;fill:#EFEFEE}
+.stn{fill:#00D588;fill-opacity:.55;stroke:#0F2A28;stroke-width:.03;cursor:pointer;transition:fill-opacity .15s}
+.stn:hover{fill-opacity:.9}
+.stn.sel{fill-opacity:.95;stroke:#EFEFEE;stroke-width:.06}
+.stn.approx{stroke-dasharray:.06 .05;stroke:#C6C6B6}
+.stn.dim{fill-opacity:.18}
+.stn-lbl{font-family:var(--font);font-size:.24px;fill:#EFEFEE;pointer-events:none;paint-order:stroke;stroke:#173836;stroke-width:.06;stroke-linejoin:round}
 .leader{stroke:#C6C6B6;stroke-width:.04;fill:none;stroke-dasharray:.12 .1;opacity:.8}
 .leader-dot{fill:#C6C6B6}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 4px 4px;font-size:12px;color:var(--linden)}
@@ -144,6 +150,7 @@ tr.total td{font-weight:600;border-top:2px solid var(--ink);border-bottom:0}
       <button class="chip" id="chip-tilbaketrukket" data-list="tilbaketrukket" aria-pressed="false"><span class="sw hatch" style="background-color:var(--c-tilbaketrukket)"></span>Tilbaketrukket</button>
       <button class="chip" id="chip-tilknyttet" data-list="tilknyttet" aria-pressed="false"><span class="sw" style="background:var(--c-tilknyttet)"></span>Tilknyttet</button>
     </div>
+    <div class="group"><button class="chip" id="chip-stn" aria-pressed="true"><span class="sw" style="background:#00D588;border-radius:50%"></span>Stasjoner</button></div>
     <div class="group"><span class="lbl">Næringstype</span><select id="naering"><option value="">Alle</option></select></div>
     <div class="group"><span class="lbl">Områdeplan</span><select id="omrplan"><option value="">Alle</option></select></div>
     <div class="group"><input id="q" type="search" placeholder="Søk kunde, stasjon, saksnr…" aria-label="Søk"></div>
@@ -177,13 +184,13 @@ tr.total td{font-weight:600;border-top:2px solid var(--ink);border-bottom:0}
       <h2 id="drillTitle">Saker</h2>
       <span class="cnt" id="drillCnt"></span>
       <span style="flex:1"></span>
-      <button class="clr" id="clearArea" hidden>Vis alle områder</button>
+      <button class="clr" id="clearArea" hidden>Vis alle</button>
     </div>
     <div class="tbl"><table id="cases"><thead></thead><tbody></tbody></table><div class="more" id="more" hidden></div></div>
   </div>
 
   <div class="foot">
-    Kilde: Statnett, <a href="https://www.statnett.no/nettkapasitet-til-produksjon-og-forbruk/foresporsler-og-reservasjon-i-nettet/" target="_blank" rel="noopener">Statistikk om tilknytningssaker</a> (Power BI, publisert av Statnett). Tallene er hentet ufiltrert fra listene bak rapportene, uten sidens dato-slicere, og kan derfor avvike marginalt fra totalene Statnett viser. Saker i tilknyttet-listen mangler prisområde hos Statnett; prisområde er utledet fra stasjonen. Prisområdegrenser: Electricity Maps (forenklet).
+    Kilde: Statnett, <a href="https://www.statnett.no/nettkapasitet-til-produksjon-og-forbruk/foresporsler-og-reservasjon-i-nettet/" target="_blank" rel="noopener">Statistikk om tilknytningssaker</a> (Power BI, publisert av Statnett). Tallene er hentet ufiltrert fra listene bak rapportene, uten sidens dato-slicere, og kan derfor avvike marginalt fra totalene Statnett viser. Saker i tilknyttet-listen mangler prisområde hos Statnett; prisområde er utledet fra stasjonen. Prisområdegrenser: Electricity Maps (forenklet). Stasjonsposisjoner: NVE, Nettanlegg (transformatorstasjoner); fire stasjoner er plassert omtrentlig.
   </div>
 </div>
 
@@ -194,6 +201,7 @@ const ROWS = /*__ROWS__*/;
 const ZONES = /*__ZONES__*/;
 const GONE = /*__GONE__*/;   // cases that have left a list since tracking began
 const SNAPSHOT = "__SNAPSHOT__";
+const STATIONS = /*__STATIONS__*/;   // name -> [px, py, lon, lat, approx]
 const LISTS = [
   ["reservert","Reservert","#EFEFEE",false],
   ["ko","I kapasitetskø","#00D588",false],
@@ -208,7 +216,7 @@ const fmt = n => Math.round(n).toLocaleString("nb-NO").replace(/\u00a0/g," ");
 const fmt1 = n => (Math.round(n*10)/10).toLocaleString("nb-NO");
 
 const yesterday=(()=>{const d=new Date(); d.setDate(d.getDate()-1); return d.toISOString().slice(0,10);})();
-const state = { kat:"Forbruk", lists:new Set(["reservert","ko"]), naering:"", op:"", q:"", area:null, sort:{k:"mw",dir:-1}, limit:150, since:yesterday };
+const state = { kat:"Forbruk", lists:new Set(["reservert","ko"]), naering:"", op:"", q:"", area:null, sort:{k:"mw",dir:-1}, limit:150, since:yesterday, station:null, showStn:true };
 try { const s = JSON.parse(localStorage.getItem("nk-state")||"null"); if (s) { state.kat=s.kat||state.kat; state.lists=new Set(s.lists||[...state.lists]); } } catch(e){}
 function persist(){ try{ localStorage.setItem("nk-state", JSON.stringify({kat:state.kat, lists:[...state.lists]})); }catch(e){} }
 
@@ -265,7 +273,26 @@ function renderMap(t){
     });
     svg.appendChild(g);
   }
-  document.getElementById("legend").innerHTML = active.map(l=>`<span><i class="sw${l[3]?" hatch":""}" style="display:inline-block;background-color:${l[2]}"></i>${l[1]}</span>`).join("") + `<span style="margin-left:auto">Stolper: samme skala i alle kort (maks ${fmt(maxMW)} MW)</span>`;
+  // station layer
+  if (state.showStn){
+    const per={};
+    for (const r of ROWS){ if(!baseFilter(r)) continue; if(!STATIONS[r.st]) continue; const o=per[r.st]||(per[r.st]={mw:0,n:0,by:{}}); o.mw+=r.mw; o.n++; o.by[r.l]=(o.by[r.l]||0)+r.mw; }
+    const names=Object.keys(per).sort((a,b)=>per[b].mw-per[a].mw);
+    const maxS=Math.max(1,...names.map(n=>per[n].mw));
+    const gs=svgEl("g",{}); svg.appendChild(gs);
+    for (const n of names.slice().reverse()){
+      const [px,py,lon,lat,approx]=STATIONS[n]; const o=per[n];
+      const r=.06+.38*Math.sqrt(o.mw/maxS);
+      const cls="stn"+(approx?" approx":"")+(state.station===n?" sel":(state.station||state.area?(state.area&&!ROWS.some(x=>x.st===n&&x.pa===state.area)?" dim":""):""));
+      const c=svgEl("circle",{cx:px,cy:-py,r,class:cls});
+      const by=LISTS.filter(l=>o.by[l[0]]).map(l=>`${l[1]}: ${fmt(o.by[l[0]])} MW`).join("\n");
+      c.appendChild(svgEl("title",{},`${n}${approx?" (omtrentlig plassering)":""}\n${fmt(o.mw)} MW · ${o.n} saker\n${by}`));
+      c.addEventListener("click",e=>{e.stopPropagation(); selectStation(n);});
+      gs.appendChild(c);
+    }
+    for (const n of names.slice(0,6)){ const [px,py]=STATIONS[n]; const o=per[n]; const r=.06+.38*Math.sqrt(o.mw/maxS); gs.appendChild(svgEl("text",{x:px+r+.06,y:-py+.09,class:"stn-lbl"},n.replace(/ (KRA\/TRA|KRA|TRA|TS TRA|transformatorstasjon TRA|Transformatorstasjon TRA)$/,""))); }
+  }
+  document.getElementById("legend").innerHTML = (state.showStn?`<span><i class="sw" style="display:inline-block;background:#00D588;border-radius:50%;opacity:.7"></i>Stasjon (areal ∝ MW, stiplet = omtrentlig plassering)</span>`:"") + active.map(l=>`<span><i class="sw${l[3]?" hatch":""}" style="display:inline-block;background-color:${l[2]}"></i>${l[1]}</span>`).join("") + `<span style="margin-left:auto">Stolper: samme skala i alle kort (maks ${fmt(maxMW)} MW)</span>`;
   document.getElementById("mapTitle").textContent = (state.kat==="Begge"?"Forbruk + produksjon":state.kat) + " · MW per prisområde";
 }
 
@@ -290,7 +317,7 @@ function renderSummary(t){
 // ---------- changes since date
 function renderChanges(){
   const since=state.since;
-  const inScope=r=>baseFilter(r) && (!state.area || r.pa===state.area);
+  const inScope=r=>baseFilter(r) && (!state.area || r.pa===state.area) && (!state.station || r.st===state.station);
   const added=ROWS.filter(r=>r.fs && r.fs>since && inScope(r)).map(r=>({t:"new",d:r.fs,r}));
   const gone=GONE.filter(r=>r.gs>since && inScope(r)).map(r=>({t:"gone",d:r.gs,r}));
   const items=[...added,...gone].sort((a,b)=>b.d.localeCompare(a.d)||b.r.mw-a.r.mw);
@@ -311,7 +338,7 @@ function renderChanges(){
 // ---------- drill-down
 const COLS=[["l","Liste"],["id","Saksnr."],["slutt","Sluttkunde"],["kunde","Nettselskap / kunde"],["st","Stasjon"],["op","Områdeplan"],["pa","Prisområde"],["n","Næringstype"],["k","Kategori"],["d","Dato"],["mw","MW"]];
 function renderCases(){
-  let rows=ROWS.filter(r=>baseFilter(r) && (!state.area || r.pa===state.area));
+  let rows=ROWS.filter(r=>baseFilter(r) && (!state.area || r.pa===state.area) && (!state.station || r.st===state.station));
   const {k,dir}=state.sort;
   rows.sort((a,b)=>{ const x=a[k],y=b[k]; if (typeof x==="number") return (x-y)*dir; return String(x).localeCompare(String(y),"nb")*dir; });
   const thead=document.querySelector("#cases thead"), tbody=document.querySelector("#cases tbody");
@@ -330,9 +357,9 @@ function renderCases(){
     tbody.appendChild(tr);
   }
   const sum=rows.reduce((s,r)=>s+r.mw,0);
-  document.getElementById("drillTitle").textContent = "Saker" + (state.area?` i ${state.area} – ${AREA_NAME[state.area]||""}`:" i hele landet");
+  document.getElementById("drillTitle").textContent = "Saker" + (state.station?` ved ${state.station}`:(state.area?` i ${state.area} – ${AREA_NAME[state.area]||""}`:" i hele landet"));
   document.getElementById("drillCnt").textContent = `${rows.length} saker · ${fmt(sum)} MW`;
-  document.getElementById("clearArea").hidden = !state.area;
+  document.getElementById("clearArea").hidden = !(state.area||state.station);
   const more=document.getElementById("more");
   if (rows.length>shown.length){ more.hidden=false; more.innerHTML=`Viser ${shown.length} av ${rows.length}. <button id="moreBtn">Vis alle</button>`; document.getElementById("moreBtn").addEventListener("click",()=>{state.limit=1e9;renderCases();}); } else more.hidden=true;
 }
@@ -341,7 +368,7 @@ function esc(s){ return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&l
 // ---------- detail drawer
 function openDetail(r){
   const l=LMAP[r.l]; const ov=document.getElementById("overlay"), d=document.getElementById("drawer");
-  const rows=[["Liste",l[1]],["Kategori",r.k],["Statnett saksnr.",r.id],["Tilko saksnr.",r.tilko],["Stasjon",r.st],["Områdeplan",r.op],["Prisområde",r.pa],["Nettselskap / Statnetts kunde",r.kunde],["Sluttkunde",r.slutt],["Næringstype",r.n],[DATE_LABEL[r.l],r.d],...Object.entries(r.x||{}),["Tilknytningsansvarlig",r.ansv],["Først sett i listen",r.fs||""],["Sist sett i listen",r.ls||""]];
+  const rows=[["Liste",l[1]],["Kategori",r.k],["Statnett saksnr.",r.id],["Tilko saksnr.",r.tilko],["Stasjon",r.st],["Områdeplan",r.op],["Prisområde",r.pa],["Nettselskap / Statnetts kunde",r.kunde],["Sluttkunde",r.slutt],["Næringstype",r.n],[DATE_LABEL[r.l],r.d],...Object.entries(r.x||{}),["Tilknytningsansvarlig",r.ansv],["Først sett i listen",r.fs||""],["Sist sett i listen",r.ls||""],["Stasjon (posisjon)",STATIONS[r.st]?`${STATIONS[r.st][3]}, ${STATIONS[r.st][2]}${STATIONS[r.st][4]?" (omtrentlig)":""}`:""]];
   d.innerHTML=`<button class="x" id="closeD" aria-label="Lukk">×</button><h3>${esc(r.slutt||r.kunde)}</h3><div class="sub">${esc(r.st)} · ${esc(r.pa)} · ${esc(r.op)}</div><div class="big">${fmt1(r.mw)}<small>MW ${l[1].toLowerCase()} · ${r.k.toLowerCase()}</small></div><dl>${rows.filter(x=>x[1]).map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join("")}</dl>`;
   ov.hidden=false; document.getElementById("closeD").focus();
   document.getElementById("closeD").addEventListener("click",closeDetail);
@@ -351,14 +378,16 @@ document.getElementById("scrim").addEventListener("click",closeDetail);
 document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeDetail(); });
 
 // ---------- wiring
-function selectArea(a){ state.area = state.area===a?null:a; state.limit=150; render(); }
+function selectArea(a){ state.area = state.area===a?null:a; state.station=null; state.limit=150; render(); }
+function selectStation(n){ state.station = state.station===n?null:n; state.limit=150; render(); }
 function render(){ const t=totals(); renderMap(t); renderSummary(t); renderChanges(); renderCases(); }
 document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{ state.kat=b.dataset.kat; document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b)); persist(); render(); }));
-document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{ const l=c.dataset.list; if (state.lists.has(l)){ if(state.lists.size===1) return; state.lists.delete(l);} else state.lists.add(l); c.setAttribute("aria-pressed",state.lists.has(l)); persist(); render(); }));
+document.querySelectorAll(".chip[data-list]").forEach(c=>c.addEventListener("click",()=>{ const l=c.dataset.list; if (state.lists.has(l)){ if(state.lists.size===1) return; state.lists.delete(l);} else state.lists.add(l); c.setAttribute("aria-pressed",state.lists.has(l)); persist(); render(); }));
 document.getElementById("naering").addEventListener("change",e=>{state.naering=e.target.value;state.limit=150;render();});
 document.getElementById("omrplan").addEventListener("change",e=>{state.op=e.target.value;state.limit=150;render();});
 let qt; document.getElementById("q").addEventListener("input",e=>{clearTimeout(qt);qt=setTimeout(()=>{state.q=e.target.value.trim();state.limit=150;render();},150);});
-document.getElementById("clearArea").addEventListener("click",()=>{state.area=null;render();});
+document.getElementById("clearArea").addEventListener("click",()=>{state.area=null;state.station=null;render();});
+document.getElementById("chip-stn").addEventListener("click",e=>{ state.showStn=!state.showStn; e.currentTarget.setAttribute("aria-pressed",state.showStn); if(!state.showStn) state.station=null; render(); });
 document.getElementById("since").addEventListener("change",e=>{ if(e.target.value){ state.since=e.target.value; renderChanges(); } });
 (function init(){
   const ns=[...new Set(ROWS.map(r=>r.n).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"nb"));
@@ -366,7 +395,7 @@ document.getElementById("since").addEventListener("change",e=>{ if(e.target.valu
   const ops=[...new Set(ROWS.map(r=>r.op).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"nb"));
   document.getElementById("omrplan").innerHTML='<option value="">Alle</option>'+ops.map(n=>`<option>${esc(n)}</option>`).join("");
   document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.kat===state.kat));
-  document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",state.lists.has(c.dataset.list)));
+  document.querySelectorAll(".chip[data-list]").forEach(c=>c.setAttribute("aria-pressed",state.lists.has(c.dataset.list)));
   const si=document.getElementById("since"); si.value=state.since; si.max=SNAPSHOT;
   render();
 })();
