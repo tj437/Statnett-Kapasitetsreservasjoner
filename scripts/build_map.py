@@ -8,6 +8,9 @@ Change tracking: the git history of data/ is walked to find, for every case
 (list + kategori + saksnr), the snapshot date it first appeared and the cases that
 have disappeared. Cases present in the very first snapshot get no first-seen date.
 Requires a full clone (fetch-depth: 0 in the workflow).
+
+Stations: geo/stasjoner.json maps Statnett's station names to coordinates (from NVE's
+Nettanlegg dataset, transformatorstasjoner); value = [lon, lat, nve_name, owner, approx].
 """
 from __future__ import annotations
 
@@ -186,6 +189,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default="data")
     ap.add_argument("--geo", default="geo/no_zones.geojson")
+    ap.add_argument("--stations", default="geo/stasjoner.json")
     ap.add_argument("--out", default="kart.html")
     ap.add_argument("--template", default=str(Path(__file__).with_name("map_template.html")))
     ap.add_argument("--logo", default="assets/logo-white.svg")
@@ -194,6 +198,14 @@ def main():
 
     rows, inferred = load_rows(Path(args.data))
     zones = load_geo(Path(args.geo))
+    stations = {}
+    try:
+        raw = json.loads(Path(args.stations).read_text(encoding="utf-8"))
+        for name, (lon, lat, nve, owner, approx) in raw.items():
+            px, py = project(lon, lat)
+            stations[name] = [round(px, 3), round(py, 3), round(lon, 4), round(lat, 4), int(approx)]
+    except Exception as e:  # noqa: BLE001
+        log(f"stations unavailable ({e}); building without station layer")
     try:
         gone, ncommits = history(args.data, rows)
     except Exception as e:  # noqa: BLE001
@@ -212,6 +224,7 @@ def main():
                .replace("/*__ROWS__*/", json.dumps(rows, ensure_ascii=False, separators=(",", ":")))
                .replace("/*__ZONES__*/", json.dumps(zones, separators=(",", ":")))
                .replace("/*__GONE__*/", json.dumps(gone, ensure_ascii=False, separators=(",", ":")))
+               .replace("/*__STATIONS__*/", json.dumps(stations, ensure_ascii=False, separators=(",", ":")))
                .replace("__SNAPSHOT__", snap))
     if args.standalone:
         html = ('<!doctype html><html lang="nb"><head><meta charset="utf-8">'
@@ -219,7 +232,7 @@ def main():
                 '<style>[hidden]{display:none!important}</style></head><body>' + html + '</body></html>')
     Path(args.out).write_text(html, encoding="utf-8")
     print(f"{args.out}: {len(rows)} rows ({inferred} prisområde inferred from station), snapshot {snap}, "
-          f"{ncommits} snapshots in history, {sum(1 for r in rows if r['fs'])} new since baseline, {len(gone)} gone, {len(html)/1024:.0f} kB")
+          f"{ncommits} snapshots in history, {sum(1 for r in rows if r['fs'])} new since baseline, {len(gone)} gone, {len(stations)} stations, {len(html)/1024:.0f} kB")
 
 
 if __name__ == "__main__":
