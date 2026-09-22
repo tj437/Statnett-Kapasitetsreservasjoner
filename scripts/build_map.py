@@ -3,6 +3,11 @@
 Build the interactive map page (kart.html) from the CSV snapshots in data/.
 
 Usage: python scripts/build_map.py [--data data] [--geo geo/no_zones.geojson] [--out kart.html] [--standalone]
+
+Change tracking: the git history of data/ is walked to find, for every case
+(list + kategori + saksnr), the snapshot date it first appeared and the cases that
+have disappeared. Cases present in the very first snapshot get no first-seen date.
+Requires a full clone (fetch-depth: 0 in the workflow).
 """
 from __future__ import annotations
 
@@ -10,6 +15,7 @@ import argparse
 import glob
 import json
 import subprocess
+import sys
 from datetime import date
 from pathlib import Path
 
@@ -38,6 +44,10 @@ STATION_FALLBACK = {
     "Dagali TRA": "NO5", "Lødingen 66kV TRA": "NO4", "Skillemoen TRA": "NO4", "Songkjølen KRA/TRA": "NO1",
     "Trofors TRA": "NO4", "Ullsfjord TRA": "NO4", "Vemorktoppen": "NO2", "Åsen": "NO2",
 }
+
+
+def log(*a):
+    print(*a, file=sys.stderr, flush=True)
 
 
 def load_rows(data_dir: Path):
@@ -87,6 +97,73 @@ def load_rows(data_dir: Path):
     return rows, inferred
 
 
+def key_of(row: dict) -> str:
+    return f"{row['l']}|{row['k']}|{row['id']}"
+
+
+def load_rows_from_git(sha: str, data_dir: str):
+    """Load the data/ CSVs as they were at a commit, using a temporary directory."""
+    import tempfile
+    files = subprocess.run(["git", "-c", "core.quotepath=false", "ls-tree", "-r", "--name-only", sha, "--", data_dir],
+                           capture_output=True, text=True, check=True).stdout.split("\n")
+    files = [f for f in files if f.endswith(".csv")]
+    if not files:
+        return None
+    with tempfile.TemporaryDirectory() as tmp:
+        for f in files:
+            out = Path(tmp) / f
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(subprocess.run(["git", "-c", "core.quotepath=false", "show", f"{sha}:{f}"], capture_output=True, check=True).stdout)
+        rows, _ = load_rows(Path(tmp) / data_dir)
+    return rows
+
+
+def history(data_dir: str, current_rows: list[dict]):
+    """Walk the git history of data/ and derive, per case key, the date it first appeared
+    (empty for cases present in the very first snapshot) and the cases that have disappeared."""
+    out = subprocess.run(["git", "log", "--reverse", "--format=%H %cd", "--date=short", "--", data_dir],
+                         capture_output=True, text=True, check=True).stdout.split("\n")
+    commits = [l.split() for l in out if l.strip()]
+    first_seen: dict[str, str] = {}
+    last_row: dict[str, dict] = {}
+    last_seen: dict[str, str] = {}
+    gone_since: dict[str, str] = {}
+    baseline: set[str] = set()
+    seen_any = False
+    for sha, d in commits:
+        rows = load_rows_from_git(sha, data_dir)
+        if rows is None:
+            continue
+        keys = set()
+        for r in rows:
+            k = key_of(r)
+            keys.add(k)
+            if k not in first_seen:
+                first_seen[k] = d
+                if not seen_any:
+                    baseline.add(k)
+            last_row[k] = r
+            last_seen[k] = d
+            gone_since.pop(k, None)
+        for k in list(last_seen):
+            if k not in keys and k not in gone_since:
+                gone_since[k] = d
+        seen_any = True
+    current = {key_of(r) for r in current_rows}
+    for r in current_rows:
+        k = key_of(r)
+        r["fs"] = "" if (k in baseline or k not in first_seen) else first_seen[k]
+    gone = []
+    for k, d in gone_since.items():
+        if k in current:
+            continue
+        r = dict(last_row[k])
+        r["ls"] = last_seen[k]
+        r["gs"] = d
+        gone.append(r)
+    return gone, len(commits)
+
+
 def project(lon, lat):
     import math
     return (lon - 15.0) * math.cos(math.radians(lat)), lat
@@ -118,6 +195,13 @@ def main():
     rows, inferred = load_rows(Path(args.data))
     zones = load_geo(Path(args.geo))
     try:
+        gone, ncommits = history(args.data, rows)
+    except Exception as e:  # noqa: BLE001
+        log(f"history unavailable ({e}); building without change tracking")
+        gone, ncommits = [], 0
+        for r in rows:
+            r["fs"] = ""
+    try:
         snap = subprocess.run(["git", "log", "-1", "--format=%cd", "--date=short", "--", args.data],
                               capture_output=True, text=True, check=True).stdout.strip() or str(date.today())
     except Exception:  # noqa: BLE001
@@ -127,13 +211,15 @@ def main():
     html = (tpl.replace("/*__LOGO__*/", logo)
                .replace("/*__ROWS__*/", json.dumps(rows, ensure_ascii=False, separators=(",", ":")))
                .replace("/*__ZONES__*/", json.dumps(zones, separators=(",", ":")))
+               .replace("/*__GONE__*/", json.dumps(gone, ensure_ascii=False, separators=(",", ":")))
                .replace("__SNAPSHOT__", snap))
     if args.standalone:
         html = ('<!doctype html><html lang="nb"><head><meta charset="utf-8">'
                 '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
                 '<style>[hidden]{display:none!important}</style></head><body>' + html + '</body></html>')
     Path(args.out).write_text(html, encoding="utf-8")
-    print(f"{args.out}: {len(rows)} rows ({inferred} prisområde inferred from station), snapshot {snap}, {len(html)/1024:.0f} kB")
+    print(f"{args.out}: {len(rows)} rows ({inferred} prisområde inferred from station), snapshot {snap}, "
+          f"{ncommits} snapshots in history, {sum(1 for r in rows if r['fs'])} new since baseline, {len(gone)} gone, {len(html)/1024:.0f} kB")
 
 
 if __name__ == "__main__":
