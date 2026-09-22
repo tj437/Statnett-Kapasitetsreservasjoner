@@ -103,6 +103,14 @@ tr.total td{font-weight:600;border-top:2px solid var(--ink);border-bottom:0}
 .drawer dl{display:grid;grid-template-columns:150px 1fr;gap:7px 12px;margin:0;font-size:13px}
 .drawer dt{color:var(--ink-muted)}
 .drawer dd{margin:0;overflow-wrap:anywhere}
+.changes{margin-top:18px}
+.changes .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.changes input[type=date]{border:1px solid var(--rule);border-radius:8px;background:var(--surface);padding:5px 10px;min-width:0}
+.changes .sum{font-size:12px;color:var(--ink-muted)}
+.changes .none{font-size:13px;color:var(--ink-muted);padding:8px 0 4px}
+.ch-new,.ch-gone{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:999px;white-space:nowrap}
+.ch-new{background:var(--accent);color:#173836}
+.ch-gone{background:var(--surface2);color:var(--ink);border:1px solid var(--rule)}
 .foot{font-size:12px;color:var(--ink-muted);margin-top:22px;line-height:1.6}
 .foot a{color:inherit}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -152,6 +160,15 @@ tr.total td{font-weight:600;border-top:2px solid var(--ink);border-bottom:0}
       <div class="hint">MW under gjeldende filter. Klikk en rad for å velge område.</div>
       <div class="kpis" id="kpis"></div>
       <div style="overflow-x:auto"><table id="sum"><thead></thead><tbody></tbody></table></div>
+      <div class="changes">
+        <h2>Endringer siden</h2>
+        <div class="row">
+          <input type="date" id="since" aria-label="Endringer siden dato">
+          <span class="sum" id="chSum"></span>
+        </div>
+        <div style="overflow-x:auto"><table id="ch"><thead><tr><th></th><th>Liste</th><th>Sluttkunde</th><th>Næringstype</th><th>Område</th><th class="num">MW</th></tr></thead><tbody></tbody></table></div>
+        <div class="none" id="chNone" hidden></div>
+      </div>
     </div>
   </div>
 
@@ -175,6 +192,8 @@ tr.total td{font-weight:600;border-top:2px solid var(--ink);border-bottom:0}
 <script>
 const ROWS = /*__ROWS__*/;
 const ZONES = /*__ZONES__*/;
+const GONE = /*__GONE__*/;   // cases that have left a list since tracking began
+const SNAPSHOT = "__SNAPSHOT__";
 const LISTS = [
   ["reservert","Reservert","#EFEFEE",false],
   ["ko","I kapasitetskø","#00D588",false],
@@ -188,7 +207,8 @@ const DATE_LABEL = {reservert:"Reservert dato",ko:"Moden bestilling",tilbaketruk
 const fmt = n => Math.round(n).toLocaleString("nb-NO").replace(/\u00a0/g," ");
 const fmt1 = n => (Math.round(n*10)/10).toLocaleString("nb-NO");
 
-const state = { kat:"Forbruk", lists:new Set(["reservert","ko"]), naering:"", op:"", q:"", area:null, sort:{k:"mw",dir:-1}, limit:150 };
+const yesterday=(()=>{const d=new Date(); d.setDate(d.getDate()-1); return d.toISOString().slice(0,10);})();
+const state = { kat:"Forbruk", lists:new Set(["reservert","ko"]), naering:"", op:"", q:"", area:null, sort:{k:"mw",dir:-1}, limit:150, since:yesterday };
 try { const s = JSON.parse(localStorage.getItem("nk-state")||"null"); if (s) { state.kat=s.kat||state.kat; state.lists=new Set(s.lists||[...state.lists]); } } catch(e){}
 function persist(){ try{ localStorage.setItem("nk-state", JSON.stringify({kat:state.kat, lists:[...state.lists]})); }catch(e){} }
 
@@ -267,6 +287,27 @@ function renderSummary(t){
   document.getElementById("sumTitle").textContent = "Per prisområde" + (state.naering?` · ${state.naering}`:"");
 }
 
+// ---------- changes since date
+function renderChanges(){
+  const since=state.since;
+  const inScope=r=>baseFilter(r) && (!state.area || r.pa===state.area);
+  const added=ROWS.filter(r=>r.fs && r.fs>since && inScope(r)).map(r=>({t:"new",d:r.fs,r}));
+  const gone=GONE.filter(r=>r.gs>since && inScope(r)).map(r=>({t:"gone",d:r.gs,r}));
+  const items=[...added,...gone].sort((a,b)=>b.d.localeCompare(a.d)||b.r.mw-a.r.mw);
+  const tbody=document.querySelector("#ch tbody"); tbody.innerHTML="";
+  for (const it of items){
+    const r=it.r, l=LMAP[r.l]; const tr=document.createElement("tr"); tr.tabIndex=0;
+    tr.innerHTML=`<td><span class="${it.t==="new"?"ch-new":"ch-gone"}">${it.t==="new"?"Ny":"Ute"}</span></td><td><span class="tag"><i class="sw${l[3]?" hatch":""}" style="background-color:${l[2]}"></i>${l[1]}</span></td><td>${esc(r.slutt||r.kunde)}</td><td>${esc(r.n)}</td><td>${esc(r.pa)}</td><td class="num"><b>${fmt1(r.mw)}</b></td>`;
+    tr.title=(it.t==="new"?"Først sett ":"Borte fra listen ")+it.d;
+    tr.addEventListener("click",()=>openDetail(r)); tr.addEventListener("keydown",e=>{if(e.key==="Enter")openDetail(r)});
+    tbody.appendChild(tr);
+  }
+  const mwNew=added.reduce((s,x)=>s+x.r.mw,0), mwGone=gone.reduce((s,x)=>s+x.r.mw,0);
+  document.getElementById("chSum").textContent = items.length ? `${added.length} nye (${fmt(mwNew)} MW) · ${gone.length} ute (${fmt(mwGone)} MW)` : "";
+  const none=document.getElementById("chNone");
+  if (!items.length){ none.hidden=false; none.textContent = since>=SNAPSHOT ? `Ingen snapshot etter ${since}. Siste snapshot er ${SNAPSHOT}.` : `Ingen endringer i listene siden ${since} under gjeldende filter.`; } else none.hidden=true;
+}
+
 // ---------- drill-down
 const COLS=[["l","Liste"],["id","Saksnr."],["slutt","Sluttkunde"],["kunde","Nettselskap / kunde"],["st","Stasjon"],["op","Områdeplan"],["pa","Prisområde"],["n","Næringstype"],["k","Kategori"],["d","Dato"],["mw","MW"]];
 function renderCases(){
@@ -300,7 +341,7 @@ function esc(s){ return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&l
 // ---------- detail drawer
 function openDetail(r){
   const l=LMAP[r.l]; const ov=document.getElementById("overlay"), d=document.getElementById("drawer");
-  const rows=[["Liste",l[1]],["Kategori",r.k],["Statnett saksnr.",r.id],["Tilko saksnr.",r.tilko],["Stasjon",r.st],["Områdeplan",r.op],["Prisområde",r.pa],["Nettselskap / Statnetts kunde",r.kunde],["Sluttkunde",r.slutt],["Næringstype",r.n],[DATE_LABEL[r.l],r.d],...Object.entries(r.x||{}),["Tilknytningsansvarlig",r.ansv]];
+  const rows=[["Liste",l[1]],["Kategori",r.k],["Statnett saksnr.",r.id],["Tilko saksnr.",r.tilko],["Stasjon",r.st],["Områdeplan",r.op],["Prisområde",r.pa],["Nettselskap / Statnetts kunde",r.kunde],["Sluttkunde",r.slutt],["Næringstype",r.n],[DATE_LABEL[r.l],r.d],...Object.entries(r.x||{}),["Tilknytningsansvarlig",r.ansv],["Først sett i listen",r.fs||""],["Sist sett i listen",r.ls||""]];
   d.innerHTML=`<button class="x" id="closeD" aria-label="Lukk">×</button><h3>${esc(r.slutt||r.kunde)}</h3><div class="sub">${esc(r.st)} · ${esc(r.pa)} · ${esc(r.op)}</div><div class="big">${fmt1(r.mw)}<small>MW ${l[1].toLowerCase()} · ${r.k.toLowerCase()}</small></div><dl>${rows.filter(x=>x[1]).map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join("")}</dl>`;
   ov.hidden=false; document.getElementById("closeD").focus();
   document.getElementById("closeD").addEventListener("click",closeDetail);
@@ -311,13 +352,14 @@ document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeDetail(); });
 
 // ---------- wiring
 function selectArea(a){ state.area = state.area===a?null:a; state.limit=150; render(); }
-function render(){ const t=totals(); renderMap(t); renderSummary(t); renderCases(); }
+function render(){ const t=totals(); renderMap(t); renderSummary(t); renderChanges(); renderCases(); }
 document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{ state.kat=b.dataset.kat; document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b)); persist(); render(); }));
 document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{ const l=c.dataset.list; if (state.lists.has(l)){ if(state.lists.size===1) return; state.lists.delete(l);} else state.lists.add(l); c.setAttribute("aria-pressed",state.lists.has(l)); persist(); render(); }));
 document.getElementById("naering").addEventListener("change",e=>{state.naering=e.target.value;state.limit=150;render();});
 document.getElementById("omrplan").addEventListener("change",e=>{state.op=e.target.value;state.limit=150;render();});
 let qt; document.getElementById("q").addEventListener("input",e=>{clearTimeout(qt);qt=setTimeout(()=>{state.q=e.target.value.trim();state.limit=150;render();},150);});
 document.getElementById("clearArea").addEventListener("click",()=>{state.area=null;render();});
+document.getElementById("since").addEventListener("change",e=>{ if(e.target.value){ state.since=e.target.value; renderChanges(); } });
 (function init(){
   const ns=[...new Set(ROWS.map(r=>r.n).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"nb"));
   document.getElementById("naering").innerHTML='<option value="">Alle</option>'+ns.map(n=>`<option>${esc(n)}</option>`).join("");
@@ -325,6 +367,7 @@ document.getElementById("clearArea").addEventListener("click",()=>{state.area=nu
   document.getElementById("omrplan").innerHTML='<option value="">Alle</option>'+ops.map(n=>`<option>${esc(n)}</option>`).join("");
   document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.kat===state.kat));
   document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",state.lists.has(c.dataset.list)));
+  const si=document.getElementById("since"); si.value=state.since; si.max=SNAPSHOT;
   render();
 })();
 </script>
