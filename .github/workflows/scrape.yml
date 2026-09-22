@@ -1,0 +1,124 @@
+name: Scrape Statnett tilknytningssaker
+
+on:
+  schedule:
+    # 05:00 UTC = 07:00 Oslo (summer) / 06:00 Oslo (winter), Monday–Friday
+    - cron: "0 5 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: "Dump raw Power BI requests/responses as a workflow artifact"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet -r requirements.txt
+
+      - name: Scrape reports
+        id: scrape
+        run: |
+          python scripts/scrape.py ${{ inputs.debug && '--debug' || '' }}
+
+      - name: Upload debug dumps
+        if: ${{ always() && inputs.debug }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: powerbi-debug
+          path: debug/
+          if-no-files-found: ignore
+
+      - name: Diff against previous snapshot
+        id: diff
+        run: python scripts/diff.py
+
+      - name: Commit snapshot
+        id: commit
+        run: |
+          git config user.name "statnett-bot"
+          git config user.email "statnett-bot@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+            echo "No data changes."
+          else
+            git commit -m "Snapshot $(date -u +%Y-%m-%d) – ${{ steps.diff.outputs.summary }}"
+            git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # --- Alert 1: GitHub issue (GitHub e-mails you on every new issue; no secrets needed)
+      - name: Open issue with changes
+        if: steps.diff.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Endringer $(date -u +%Y-%m-%d): ${{ steps.diff.outputs.summary }}" \
+            --label "endring" \
+            --body-file CHANGES.md || \
+          gh issue create \
+            --title "Endringer $(date -u +%Y-%m-%d): ${{ steps.diff.outputs.summary }}" \
+            --body-file CHANGES.md
+
+      # --- Alert 2 (optional): e-mail via SMTP. Set the four secrets to enable.
+      - name: E-mail changes
+        if: steps.diff.outputs.has_changes == 'true' && vars.ALERT_EMAIL_TO != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "Statnett tilknytningssaker – ${{ steps.diff.outputs.summary }}"
+          to: ${{ vars.ALERT_EMAIL_TO }}
+          from: Statnett-overvåking <${{ secrets.SMTP_USERNAME }}>
+          body: file://CHANGES.md
+          convert_markdown: true
+
+      # --- Alert 3 (optional): Teams incoming webhook. Set TEAMS_WEBHOOK_URL secret to enable.
+      - name: Post to Teams
+        if: steps.diff.outputs.has_changes == 'true' && secrets.TEAMS_WEBHOOK_URL != ''
+        env:
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+        run: |
+          python - <<'EOF'
+          import json, os, urllib.request
+          body = open("CHANGES.md", encoding="utf-8").read()[:20000]
+          payload = {"type": "message", "attachments": [{"contentType": "application/vnd.microsoft.card.adaptive",
+                     "content": {"type": "AdaptiveCard", "version": "1.4",
+                                 "body": [{"type": "TextBlock", "text": body, "wrap": True}]}}]}
+          req = urllib.request.Request(os.environ["TEAMS_WEBHOOK_URL"], data=json.dumps(payload).encode(),
+                                       headers={"Content-Type": "application/json"})
+          print(urllib.request.urlopen(req).status)
+          EOF
+
+      # --- Failure alert: if the scraper itself breaks (e.g. Statnett republished), open an issue
+      - name: Open issue on scraper failure
+        if: failure() && steps.scrape.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Scraper feilet $(date -u +%Y-%m-%d)" \
+            --body "Kjøringen feilet. Se loggen: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}. Sjekk om Statnett har republisert rapporten (nye embed-lenker i config.yml)."
