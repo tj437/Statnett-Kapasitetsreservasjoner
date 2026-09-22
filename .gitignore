@@ -1,0 +1,5 @@
+debug/
+CHANGES.md
+changes.json
+__pycache__/
+.venv/
