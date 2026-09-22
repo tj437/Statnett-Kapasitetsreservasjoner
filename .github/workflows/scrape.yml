@@ -14,6 +14,8 @@ on:
 permissions:
   contents: write
   issues: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: scrape
@@ -122,3 +124,30 @@ jobs:
           gh issue create \
             --title "Scraper feilet $(date -u +%Y-%m-%d)" \
             --body "Kjøringen feilet. Se loggen: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}. Sjekk om Statnett har republisert rapporten (nye embed-lenker i config.yml)."
+
+  # --- Publish the interactive map to GitHub Pages from the fresh snapshot
+  pages:
+    needs: scrape
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet -r requirements.txt
+      - name: Build map page
+        run: |
+          mkdir -p site
+          python scripts/build_map.py --standalone --out site/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4
