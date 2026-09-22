@@ -1,0 +1,41 @@
+# Statnett tilknytningssaker – scraper configuration
+#
+# Each report is one of the Power BI "publish to web" embeds on
+# https://www.statnett.no/nettkapasitet-til-produksjon-og-forbruk/foresporsler-og-reservasjon-i-nettet/
+# (the "Fullskjermvisning" links). The scraper reads every table visual on every
+# page of the report and writes one CSV per table: data/<report>/<page>__<table>.csv
+#
+# Resource keys verified 2026-09-22:
+#   reservasjoner  = "Reservasjoner ekstern.pbix"      pages: Reservasjoner / Liste over reservasjoner
+#   kapasitetsko   = "Kapasitetskø ekstern.pbix"       pages: Kapasitetskø / Liste over kapasitetskø
+#   tilbaketrukket = "Tilbaketrukket kapasitet.pbix"   pages: Tilbaketrukket kapasitet / Liste over saker med tilbaketrukket kapasitet
+#   tilknyttet     = "Tilknyttet kapasitet ekstern.pbix" pages: Tilknyttet kapasitet / Liste over saker som er tilknyttet
+
+reports:
+  reservasjoner:
+    url: "https://app.powerbi.com/view?r=eyJrIjoiZTVkMmNiNDQtM2VhZi00OGQ0LWE0YTAtMjMyOGMxMzhlYmZmIiwidCI6ImE4ZDYxNDYyLWYyNTItNDRiMi1iZjZhLWQ3MjMxOTYwYzA0MSIsImMiOjh9"
+  kapasitetsko:
+    url: "https://app.powerbi.com/view?r=eyJrIjoiYTM4N2MzZGMtMGMwYi00MjMwLThjNWYtYTBhMmNkYTVkNmFmIiwidCI6ImE4ZDYxNDYyLWYyNTItNDRiMi1iZjZhLWQ3MjMxOTYwYzA0MSIsImMiOjh9"
+  tilbaketrukket:
+    url: "https://app.powerbi.com/view?r=eyJrIjoiZjhkMjM1OWQtMDBlYS00NDUzLWE4YTMtNjA4YmYzMWQ2MDFlIiwidCI6ImE4ZDYxNDYyLWYyNTItNDRiMi1iZjZhLWQ3MjMxOTYwYzA0MSIsImMiOjh9"
+  tilknyttet:
+    url: "https://app.powerbi.com/view?r=eyJrIjoiNmE3ZDVhMzEtNjgwNi00MDQ2LTkyMDEtNzFmYjU3MDkzNDIyIiwidCI6ImE4ZDYxNDYyLWYyNTItNDRiMi1iZjZhLWQ3MjMxOTYwYzA0MSIsImMiOjh9"
+
+# Only rows matching ALL of these filters are included in the change alert.
+# The full (unfiltered) data is still stored in data/, so you can widen this later.
+# Matching is case-insensitive substring on the named column; column names are matched
+# by substring too ("prisområde" matches "Prisområde"). Leave empty to alert on everything.
+# Columns in the lists: Statnett saksnr., Tilko saksnr., Stasjon for tilknytning i
+# transmisjonsnettet, Områdeplan, Prisområde, Statnetts kunde, Sluttkunde, Næringstype,
+# Kapasitet ... (MW), Dato ..., Tilknytningsansvarlig
+alert_filters:
+  # prisområde: ["NO2", "NO3"]
+  # områdeplan: ["Sogn og Sunnmøre", "Midt"]
+  # næringstype: ["Hydrogen"]
+
+# Columns (substring match) that identify a row. Used to pair a removed row with an
+# added row and report it as a change rather than as remove+add.
+key_columns: ["saksnr"]
+
+# Maximum rows requested per table
+max_rows: 50000
