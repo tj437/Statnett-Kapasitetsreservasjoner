@@ -130,7 +130,7 @@ tr.total td{font-weight:600;border-top:2px solid var(--ink);border-bottom:0}
       <div class="sub">Reservert, i kø, tilbaketrukket og tilknyttet kapasitet per prisområde — Statnetts tilknytningssaker</div>
     </div>
     <div class="spacer"></div>
-    <div class="meta">Datagrunnlag: Statnett, statistikk om tilknytningssaker<br>Snapshot __SNAPSHOT__</div>
+    <div class="meta">Datagrunnlag: Statnett, statistikk om tilknytningssaker<br>Data sist endret __SNAPSHOT__ · sist sjekket __CHECKED__</div>
   </div>
   <div class="hairline"></div>
 </header>
@@ -200,7 +200,8 @@ tr.total td{font-weight:600;border-top:2px solid var(--ink);border-bottom:0}
 const ROWS = /*__ROWS__*/;
 const ZONES = /*__ZONES__*/;
 const GONE = /*__GONE__*/;   // cases that have left a list since tracking began
-const SNAPSHOT = "__SNAPSHOT__";
+const SNAPSHOT = "__SNAPSHOT__";   // last commit that changed data/
+const CHECKED = "__CHECKED__";     // date the page was built (= last successful scrape)
 const STATIONS = /*__STATIONS__*/;   // name -> [px, py, lon, lat, approx]
 const LISTS = [
   ["reservert","Reservert","#EFEFEE",false],
@@ -212,7 +213,7 @@ const LMAP = Object.fromEntries(LISTS.map(l=>[l[0],l]));
 const AREAS = ["NO1","NO2","NO3","NO4","NO5"];
 const AREA_NAME = {NO1:"Øst-Norge",NO2:"Sør-Norge",NO3:"Midt-Norge",NO4:"Nord-Norge",NO5:"Vest-Norge"};
 const DATE_LABEL = {reservert:"Reservert dato",ko:"Moden bestilling",tilbaketrukket:"Tilbaketrukket dato",tilknyttet:"Tilknyttet dato"};
-const fmt = n => Math.round(n).toLocaleString("nb-NO").replace(/\u00a0/g," ");
+const fmt = n => Math.round(n).toLocaleString("nb-NO").replace(/ /g," ");
 const fmt1 = n => (Math.round(n*10)/10).toLocaleString("nb-NO");
 
 const yesterday=(()=>{const d=new Date(); d.setDate(d.getDate()-1); return d.toISOString().slice(0,10);})();
@@ -332,11 +333,11 @@ function renderChanges(){
   const mwNew=added.reduce((s,x)=>s+x.r.mw,0), mwGone=gone.reduce((s,x)=>s+x.r.mw,0);
   document.getElementById("chSum").textContent = items.length ? `${added.length} nye (${fmt(mwNew)} MW) · ${gone.length} ute (${fmt(mwGone)} MW)` : "";
   const none=document.getElementById("chNone");
-  if (!items.length){ none.hidden=false; none.textContent = since>=SNAPSHOT ? `Ingen snapshot etter ${since}. Siste snapshot er ${SNAPSHOT}.` : `Ingen endringer i listene siden ${since} under gjeldende filter.`; } else none.hidden=true;
+  if (!items.length){ none.hidden=false; none.textContent = since>=CHECKED ? `Ikke sjekket etter ${since}. Sist sjekket ${CHECKED}.` : `Ingen endringer i listene siden ${since} under gjeldende filter (data sist endret ${SNAPSHOT}, sist sjekket ${CHECKED}).`; } else none.hidden=true;
 }
 
 // ---------- drill-down
-const COLS=[["l","Liste"],["id","Saksnr."],["slutt","Sluttkunde"],["kunde","Nettselskap / kunde"],["st","Stasjon"],["op","Områdeplan"],["pa","Prisområde"],["n","Næringstype"],["k","Kategori"],["d","Dato"],["mw","MW"]];
+const COLS=[["l","Liste"],["id","Saksnr."],["slutt","Sluttkunde"],["kunde","Nettselskap / kunde"],["st","Stasjon"],["op","Områdeplan"],["pa","Pris­område"],["n","Næringstype"],["k","Kategori"],["d","Dato"],["mw","MW"]];
 function renderCases(){
   let rows=ROWS.filter(r=>baseFilter(r) && (!state.area || r.pa===state.area) && (!state.station || r.st===state.station));
   const {k,dir}=state.sort;
@@ -396,7 +397,7 @@ document.getElementById("since").addEventListener("change",e=>{ if(e.target.valu
   document.getElementById("omrplan").innerHTML='<option value="">Alle</option>'+ops.map(n=>`<option>${esc(n)}</option>`).join("");
   document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.kat===state.kat));
   document.querySelectorAll(".chip[data-list]").forEach(c=>c.setAttribute("aria-pressed",state.lists.has(c.dataset.list)));
-  const si=document.getElementById("since"); si.value=state.since; si.max=SNAPSHOT;
+  const si=document.getElementById("since"); si.value=state.since; si.max=CHECKED;
   render();
 })();
 </script>
