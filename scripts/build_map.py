@@ -42,15 +42,17 @@ DATE_COL = {
     "tilbaketrukket": "Dato - tilbaketrukket kapasitet",
     "tilknyttet": "Dato - tilknyttet kapasitet",
 }
+DATE_LABEL = {
+    "reservert": "Reservert dato",
+    "ko": "Moden bestilling",
+    "tilbaketrukket": "Tilbaketrukket dato",
+    "tilknyttet": "Tilknyttet dato",
+}
 # Stations in the tilknyttet list that never appear in a list carrying Prisområde.
 STATION_FALLBACK = {
     "Dagali TRA": "NO5", "Lødingen 66kV TRA": "NO4", "Skillemoen TRA": "NO4", "Songkjølen KRA/TRA": "NO1",
     "Trofors TRA": "NO4", "Ullsfjord TRA": "NO4", "Vemorktoppen": "NO2", "Åsen": "NO2",
 }
-
-
-def log(*a):
-    print(*a, file=sys.stderr, flush=True)
 
 
 def load_rows(data_dir: Path):
@@ -59,7 +61,7 @@ def load_rows(data_dir: Path):
     for key, (folder, label) in LISTS.items():
         for f in sorted(glob.glob(str(data_dir / folder / "*.csv"))):
             df = pd.read_csv(f)
-            df.columns = [c.lstrip("\ufeff") for c in df.columns]
+            df.columns = [c.lstrip("﻿") for c in df.columns]
             kategori = "Produksjon" if "Produksjon" in Path(f).stem else "Forbruk"
             df["_liste"] = key
             df["_kategori"] = kategori
@@ -98,6 +100,10 @@ def load_rows(data_dir: Path):
             "mw": round(float(r["_mw"]), 2), "d": g("_dato"), "ansv": g("Kunde og tilknytningsansvarlig"), "x": extra,
         })
     return rows, inferred
+
+
+def log(*a):
+    print(*a, file=sys.stderr, flush=True)
 
 
 def key_of(row: dict) -> str:
@@ -225,7 +231,8 @@ def main():
                .replace("/*__ZONES__*/", json.dumps(zones, separators=(",", ":")))
                .replace("/*__GONE__*/", json.dumps(gone, ensure_ascii=False, separators=(",", ":")))
                .replace("/*__STATIONS__*/", json.dumps(stations, ensure_ascii=False, separators=(",", ":")))
-               .replace("__SNAPSHOT__", snap))
+               .replace("__SNAPSHOT__", snap)
+               .replace("__CHECKED__", str(date.today())))
     if args.standalone:
         html = ('<!doctype html><html lang="nb"><head><meta charset="utf-8">'
                 '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
