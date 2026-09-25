@@ -58,7 +58,7 @@
 24/01726,ELB116,Ulven TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,SI OSL 01 AS,Datasenter,2025-03-05,2027-09-29,Karoline Josefine Gudbjerg,7.7
 24/01729,ELB2207,Rana KRA/TRA,Helgeland og Salten,NO4,Linea AS,SMA Mineral,Industri,2024-07-04,2028-03-31,Ingvild Grøtterud Birkeland,385
 24/01735,ELB99,Tegneby TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Nydalen Energi AS,Annet forbruk,2024-11-26,2025-12-31,Karoline Josefine Gudbjerg,15
-24/01739,,Surna,Midt,NO3,Mellom AS,Salfjord AS,Oppdrettsnæring,2024-06-05,2032-08-31,Hans Olav Ween,55
+24/01739,ELB1631,Surna,Midt,NO3,Mellom AS,Salfjord AS,Oppdrettsnæring,2024-06-05,2032-08-31,Hans Olav Ween,55
 24/01740,ELB1633,Viklandet TRA,Midt,NO3,Linja AS,Green H AS,Hydrogen/ammoniakk,2024-05-25,2026-12-01,Hans Olav Ween,50
 24/01742,ELB2539,Fortun KRA/TRA,Sogn og Sunnmøre,NO5,Linja AS,Hydro Aluminium AS,Industri,2024-09-03,2029-12-30,Hans Olav Ween,56
 24/01748,ELB813,Litle Sotra TRA,Bergen og Haugalandet,NO5,BKK AS,Tresmarka AS,Transport,2020-12-22,2028-12-01,Magnus Øverby Tennøe,20
@@ -100,7 +100,7 @@
 25/02087,ELB136,Furuset TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Hafslund Celsio AS,Annet forbruk,2025-03-12,2027-11-30,Karoline Josefine Gudbjerg,6
 25/02101,ELB610,Spanne TRA,Bergen og Haugalandet,NO2,Fagne AS,FlexFuels AS,Industri,2024-12-05,2028-01-01,Magnus Øverby Tennøe,25
 25/02103,ELB84,Nedre Røssåga KRA/TRA,Helgeland og Salten,NO4,Linea AS,GreenH,Hydrogen/ammoniakk,2024-12-31,2034-09-29,Ingvild Grøtterud Birkeland,10
-25/02104,ELB142,Vardal TRA,Innlandet,NO1,Elvia As,Nammo Raufoss AS,Industri,2025-04-02,2026-06-29,Karoline Josefine Gudbjerg,2
+25/02104,ELB142,Vardal TRA,Innlandet,NO1,Elvia As,NAMMO RAUFOSS AS,Industri,2025-04-02,2026-06-29,Karoline Josefine Gudbjerg,2
 25/02124,ELB1425,Lio Kraftstasjon KRA/TRA,Telemark og Vestfold,NO2,Statkraft Energi As,DataEnergy,Datasenter,2025-04-10,2026-03-31,Geir Kåsa,50
 25/02153,,Kvandal TRA,Nord,NO4,Nordkraft Industrinett,Aaktik Digital AS,Datasenter,2025-06-12,2028-09-29,Lars Erik Johansen,200
 25/02154,,Kvandal TRA,Nord,NO4,Nordkraft Industrinett,Aaktik Digital AS,Datasenter,2025-06-12,2029-09-29,Lars Erik Johansen,90
@@ -114,7 +114,7 @@
 25/02266,ELB348,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Akershus Energi Varme AS,Annet forbruk,2026-04-15,2027-01-01,Karoline Josefine Gudbjerg,25
 25/02281,ELB398,Bardufoss Transformatorstasjon TRA,Nord,NO4,Arva AS,FORSVARSBYGG,Annet forbruk,2025-05-20,2026-04-01,Lars Erik Johansen,4
 25/02293,ELB672,Arendal TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Bifrost Edge AS,Datasenter,2026-03-08,2027-06-30,Arne Utne,285
-25/02301,ELB437,Vardal TRA,Innlandet,NO1,Elvia As,Nammo Raufoss AS,Industri,2024-10-30,2026-01-01,Karoline Josefine Gudbjerg,1
+25/02301,ELB437,Vardal TRA,Innlandet,NO1,Elvia As,NAMMO RAUFOSS AS,Industri,2024-10-30,2026-01-01,Karoline Josefine Gudbjerg,1
 25/02303,ELB1196,Aura KRA/TRA,Midt,NO3,Tensio AS,Driva Kraft DA,Annet forbruk,2026-03-13,2032-01-01,Hans Olav Ween,100
 25/02362,ELB571,Nedre Røssåga KRA/TRA,Helgeland og Salten,NO4,Linea AS,Aker Nscale AS,Datasenter,2025-10-20,2028-07-01,Ingvild Grøtterud Birkeland,250
 25/02364,ELB1615,Orkdal TRA,Midt,NO3,Tensio AS,Eiktyr Data AS,Datasenter,2026-04-20,2028-01-01,Christopher Aarnseth Ruud,450
@@ -131,9 +131,9 @@
 25/02601,ELB707,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Pyur Energy AS,Annet forbruk,2026-02-17,2027-10-01,Karoline Josefine Gudbjerg,11
 25/02605,ELB731,Moskog TRA,Sogn og Sunnmøre,NO3,BKK AS,ARCEM DC 16 AS,Datasenter,2026-03-19,2029-10-01,Hans Olav Ween,40
 25/02609,ELB2941,Hove KRA/TRA,Bergen og Haugalandet,NO5,Sygnir AS,VANGSNES UTVIKLING AS,Datasenter,2026-05-18,2032-04-01,Hans Olav Ween,120
-25/02612,ELB946,Vardal TRA,Innlandet,NO1,Elvia As,Nammo Raufoss AS,Industri,2026-02-10,2028-04-01,Karoline Josefine Gudbjerg,2
+25/02612,ELB946,Vardal TRA,Innlandet,NO1,Elvia As,NAMMO RAUFOSS AS,Industri,2026-02-10,2028-04-01,Karoline Josefine Gudbjerg,2
 25/02625,,Ballangen,Nord,NO4,Nordkraft Industrinett,Aker Nscale,Datasenter,2025-11-02,2027-10-31,Lars Erik Johansen,140
-25/02643,ELB945,Vardal TRA,Innlandet,NO1,Elvia As,Nammo Raufoss AS,Industri,2026-02-16,2026-10-01,Karoline Josefine Gudbjerg,8
+25/02643,ELB945,Vardal TRA,Innlandet,NO1,Elvia As,NAMMO RAUFOSS AS,Industri,2026-02-16,2026-10-01,Karoline Josefine Gudbjerg,8
 25/02663,ELB808,Rendalen transformatorstasjon TRA,Innlandet,NO1,Elvia As,Tynset Energipark AS,Datasenter,2026-02-11,2026-07-01,Karoline Josefine Gudbjerg,150
 25/02674,ELB1031,Nye Stokmarknes transformatorstasjon TRA,Nord,NO4,Noranett AS,GRIDCORE ENERGY STORAGE AS,Batteri (uttak),2025-10-22,2026-04-01,Lars Erik Johansen,15
 25/02680,ELB1036,Stølaheia TRA,Sør Rogaland og Agder,NO2,Lnett AS,UNCAP AS,Annet forbruk,2026-01-13,2029-01-01,Arne Utne,70
@@ -226,13 +226,13 @@
 26/04237,ELB3119,Follo TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Karmsund Group AS,Annet forbruk,2026-08-03,2027-07-01,Karoline Josefine Gudbjerg,25
 26/04294,ELB3029,Lindås transformatorstasjon TRA,Bergen og Haugalandet,NO5,BKK AS,EQUINOR ASA,Petroleum,2026-06-25,2029-01-01,Magnus Øverby Tennøe,40
 26/04365,ELB4055,Boltåsen transformatorstasjon TRA,Nord,NO4,Noranett AS,100759,Industri,2026-05-25,2026-12-31,Lars Erik Johansen,27.3
-26/04415,ELB3221,Vardal TRA,Innlandet,NO1,Elvia As,Nammo Raufoss AS,Industri,2026-09-14,2029-10-01,Karoline Josefine Gudbjerg,2
+26/04415,ELB3221,Vardal TRA,Innlandet,NO1,Elvia As,NAMMO RAUFOSS AS,Industri,2026-09-14,2029-10-01,Karoline Josefine Gudbjerg,2
 26/04423,ELB3470,Rød TRA,Telemark og Vestfold,NO2,Lede AS,LF PROSJEKT 3 AS,Datasenter,2026-06-19,2028-10-01,Geir Kåsa,160
 26/04495,ELB3554,Borgund KRA/TRA,Hallingdal og Ringerike,NO5,Sygnir AS,HÅBAKKEN NÆRINGSPARK AS,Datasenter,2026-06-30,2027-10-01,Hans Olav Ween,30
 26/04512,ELB3568,Tveiten TRA,Telemark og Vestfold,NO2,Lede AS,HAUKEVEIEN HOLDING AS,Datasenter,2026-07-01,2030-10-01,Geir Kåsa,90
-26/04536,ELB3389,Vardal TRA,Innlandet,NO1,Elvia As,Nammo Raufoss AS,Industri,2026-09-14,2030-07-01,Heidi Hellesvik Ringstad,2
-26/04537,ELB3390,Vardal TRA,Innlandet,NO1,Elvia As,Nammo Raufoss AS,Industri,2026-09-14,2030-10-01,Karoline Josefine Gudbjerg,2
-26/04538,ELB3550,Vardal TRA,Innlandet,NO1,Elvia As,Nammo Raufoss AS,Industri,2026-09-14,2031-07-01,Karoline Josefine Gudbjerg,2
-26/04540,ELB3552,Vardal TRA,Innlandet,NO1,Elvia As,Nammo Raufoss AS,Industri,2026-09-14,2029-10-01,Karoline Josefine Gudbjerg,1
-26/04541,ELB3553,Vardal TRA,Innlandet,NO1,Elvia As,Nammo Raufoss AS,Industri,2026-09-14,2029-04-01,Karoline Josefine Gudbjerg,1
+26/04536,ELB3389,Vardal TRA,Innlandet,NO1,Elvia As,NAMMO RAUFOSS AS,Industri,2026-09-14,2030-07-01,Heidi Hellesvik Ringstad,2
+26/04537,ELB3390,Vardal TRA,Innlandet,NO1,Elvia As,NAMMO RAUFOSS AS,Industri,2026-09-14,2030-10-01,Karoline Josefine Gudbjerg,2
+26/04538,ELB3550,Vardal TRA,Innlandet,NO1,Elvia As,NAMMO RAUFOSS AS,Industri,2026-09-14,2031-07-01,Karoline Josefine Gudbjerg,2
+26/04540,ELB3552,Vardal TRA,Innlandet,NO1,Elvia As,NAMMO RAUFOSS AS,Industri,2026-09-14,2029-10-01,Karoline Josefine Gudbjerg,1
+26/04541,ELB3553,Vardal TRA,Innlandet,NO1,Elvia As,NAMMO RAUFOSS AS,Industri,2026-09-14,2029-04-01,Karoline Josefine Gudbjerg,1
 26/04604,ELB3665,Borgund KRA/TRA,Hallingdal og Ringerike,NO5,Sygnir AS,HÅBAKKEN NÆRINGSPARK AS,Datasenter,2026-07-13,2027-10-01,Hans Olav Ween,4
