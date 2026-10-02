@@ -123,7 +123,6 @@
 24/01490,,Furuset TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Nye Aker sykehus,Annet forbruk,2024-02-12,2027-03-30,Karoline Josefine Gudbjerg,7.8
 24/01491,,Sogn TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Nye Rikshopistalet sykehus,Annet forbruk,2024-02-12,2030-03-30,Karoline Josefine Gudbjerg,9
 24/01492,ELB1896,Bamble TRA,Telemark og Vestfold,NO2,Lede AS,Recuro AS,Industri,2025-04-10,2029-06-29,Geir Kåsa,8
-24/01501,ELB478,Bærheim TRA,Sør Rogaland og Agder,NO2,Lnett AS,ASP Eiendom AS,Datasenter,2024-06-27,2026-06-30,Arne Utne,3
 24/01503,ELB567,Fagrafjell TRA,Sør Rogaland og Agder,NO2,Lnett AS,Green Horizon AS,Datasenter,2024-06-27,2026-12-31,Arne Utne,48
 24/01504,ELB455,Bjerkreim TRA,Sør Rogaland og Agder,NO2,Lnett AS,GreenBox™ Data Center Solutions by Green Horizon AS,Datasenter,2024-06-27,2027-12-31,Arne Utne,36
 24/01506,ELB1715,Åfjord TRA,Midt,NO3,Tensio AS,FOSSEFALL AS,Datasenter,2025-11-14,2026-01-30,Christopher Aarnseth Ruud,2.2
@@ -138,8 +137,7 @@
 24/01655,ELB64,Kolsvik KRA/TRA,Helgeland og Salten,NO4,Linea AS,Brønnøy Kalk,Transport,2025-03-12,2026-06-29,Ingvild Grøtterud Birkeland,2.5
 24/01660,ELB1841,Grenland TRA,Telemark og Vestfold,NO2,Lede AS,Klingstone AS,Datasenter,2024-10-28,2026-12-30,Geir Kåsa,55
 24/01713,ELB1572,Kristiansand TRA,Sør Rogaland og Agder,NO2,N01 Utilities AS,N01 Utilities AS,Datasenter,2025-05-22,2029-12-30,Arne Utne,300
-24/01720,ELB472,Bærheim TRA,Sør Rogaland og Agder,NO2,Lnett AS,Kolumbus AS,Transport,2025-04-11,2026-06-29,Arne Utne,18
-24/01721,ELB480,Bærheim TRA,Sør Rogaland og Agder,NO2,Lnett AS,ASP Eiendom AS,Datasenter,2024-10-16,2031-12-30,Arne Utne,8
+24/01721,ELB480,Bærheim TRA,Sør Rogaland og Agder,NO2,Lnett AS,Asp Eiendom AS,Datasenter,2024-10-16,2031-12-30,Arne Utne,8
 24/01744,ELB2053,Moskog TRA,Sogn og Sunnmøre,NO3,Linja AS,Nordfjord Havn IKS,Transport,2025-11-12,2028-04-27,Hans Olav Ween,12
 24/01748,ELB813,Litle Sotra TRA,Bergen og Haugalandet,NO5,BKK AS,Tresmarka AS,Transport,2025-05-06,2035-12-31,Magnus Øverby Tennøe,30
 24/01755,ELB80,Marka TRA,Helgeland og Salten,NO4,Linea AS,Gen2 energy,Hydrogen/ammoniakk,2025-12-21,2028-06-29,Ingvild Grøtterud Birkeland,195
