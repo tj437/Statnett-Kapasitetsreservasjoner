@@ -96,7 +96,6 @@
 25/02078,ELB42,Salten transformatorstasjon TRA,Helgeland og Salten,NO4,Arva AS,ISE Utvikling AS,Hydrogen/ammoniakk,2023-11-17,2026-12-31,Ingvild Grøtterud Birkeland,5
 25/02082,ELB3215,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Elkem,Hydrogen/ammoniakk,2024-11-21,2028-12-01,Arne Utne,40
 25/02087,ELB136,Furuset TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Hafslund Celsio AS,Annet forbruk,2025-03-12,2027-11-30,Karoline Josefine Gudbjerg,6
-25/02101,ELB610,Spanne TRA,Bergen og Haugalandet,NO2,Fagne AS,FlexFuels AS,Industri,2024-12-05,2028-01-01,Magnus Øverby Tennøe,25
 25/02103,ELB84,Nedre Røssåga KRA/TRA,Helgeland og Salten,NO4,Linea AS,GreenH,Hydrogen/ammoniakk,2024-12-31,2034-09-29,Ingvild Grøtterud Birkeland,10
 25/02104,ELB142,Vardal TRA,Innlandet,NO1,Elvia As,NAMMO RAUFOSS AS,Industri,2025-04-02,2026-06-29,Karoline Josefine Gudbjerg,2
 25/02124,ELB1425,Lio Kraftstasjon KRA/TRA,Telemark og Vestfold,NO2,Statkraft Energi As,DataEnergy,Datasenter,2025-04-10,2026-03-31,Geir Kåsa,50
@@ -168,8 +167,8 @@
 26/03086,ELB1303,Minne TRA,Innlandet,NO1,Elvia As,Pyur Energy AS,Annet forbruk,2026-02-24,2029-01-01,Karoline Josefine Gudbjerg,8
 26/03096,ELB1673,Surna,Midt,NO3,Mellom AS,Salfjord AS,Datasenter,2026-02-08,2028-04-01,Hans Olav Ween,90
 26/03099,ELB1700,Viklandet TRA,Midt,NO3,Mellom AS,MAGNORA SCALE AVERØYA AS,Datasenter,2026-03-25,2028-01-01,Hans Olav Ween,94
-26/03114,ELB1824,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Stormvind AS,Annet forbruk,2024-11-14,2026-03-07,Geir Kåsa,20
-26/03116,ELB1806,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Stormvind AS,Annet forbruk,2024-11-14,2025-12-31,Geir Kåsa,5
+26/03114,ELB1824,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Flekskraft AS,Annet forbruk,2024-11-14,2026-03-07,Geir Kåsa,20
+26/03116,ELB1806,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Flekskraft AS,Annet forbruk,2024-11-14,2025-12-31,Geir Kåsa,5
 26/03132,ELB1768,Grenland TRA,Telemark og Vestfold,NO2,Lede AS,FOSSEFALL AS,Datasenter,2025-12-01,2026-10-01,Geir Kåsa,1
 26/03164,ELB1936,Balsfjord TRA,Nord,NO4,Arva AS,TROMS FYLKESKOMMUNE,Transport,2026-03-02,2029-04-01,Lars Erik Johansen,18
 26/03165,ELB1826,Rød TRA,Telemark og Vestfold,NO2,Lede AS,LØVENSKIOLD-FOSSUM KRAFT DRIFT AS,Datasenter,2026-01-21,2027-10-01,Geir Kåsa,96
