@@ -122,7 +122,7 @@
 25/01987,ELB1819,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Hafslund Magnora AS,Solkraft,2025-04-09,2029-03-30,Geir Kåsa,6.6
 25/02011,ELB56,Bardufoss Transformatorstasjon TRA,Nord,NO4,Arva AS,STATKRAFT ENERGI AS,Vannkraft,2025-02-18,2027-10-28,Lars Erik Johansen,10.2
 25/02037,ELB1390,Moskog TRA,Sogn og Sunnmøre,NO3,Linja AS,TINFOS AS,Vannkraft,2026-01-26,2028-04-30,Hans Olav Ween,7.3
-25/02052,ELB2386,Hof TRA,Telemark og Vestfold,NO2,Lede AS,Gårdskraft AS,Vannkraft,2026-03-03,2029-12-30,Geir Kåsa,6
+25/02052,ELB2386,Hof TRA,Telemark og Vestfold,NO2,Lede AS,GÅRDSKRAFT AS,Vannkraft,2026-03-03,2029-12-30,Geir Kåsa,6
 25/02063,ELB476,Bjerkreim TRA,Sør Rogaland og Agder,NO2,Lnett AS,Statkraft Vind utvikling DA,Vindkraft,,2031-06-29,Arne Utne,25
 25/02096,ELB483,Kjelland TRA,Sør Rogaland og Agder,NO2,Lnett AS,Dalane Kraft AS,Vannkraft,2025-10-21,2030-01-01,Arne Utne,3.7
 25/02097,ELB481,Kjelland TRA,Sør Rogaland og Agder,NO2,Lnett AS,Dalane Kraft AS,Vannkraft,2025-10-21,2031-01-01,Arne Utne,10
@@ -150,9 +150,9 @@
 25/02903,ELB1388,Nes Bk TRA,Hallingdal og Ringerike,NO5,Glitre Nett AS,Stormvind AS,Annen produksjon,2026-06-22,2027-06-29,Heidi Hellesvik Ringstad,10
 25/02929,ELB1072,Haugsvær transformatorstasjon TRA,Bergen og Haugalandet,NO5,BKK AS,Småkraft AS,Vannkraft,2026-06-12,2030-12-31,Marte Klavenes,9.9
 25/02930,ELB1073,Haugsvær transformatorstasjon TRA,Bergen og Haugalandet,NO5,BKK AS,Småkraft AS,Vannkraft,2026-06-12,2030-12-31,Marte Klavenes,9.9
-25/02987,ELB1319,Dale TRA,Bergen og Haugalandet,NO5,BKK AS,Småkraft AS,Vannkraft,,2030-06-30,Marte Klavenes,15
+25/02987,ELB1319,Dale TRA,Bergen og Haugalandet,NO5,BKK AS,Småkraft AS,Vannkraft,2026-07-02,2030-06-30,Marte Klavenes,15
 26/03198,ELB1674,Usta KRA/TRA,Hallingdal og Ringerike,NO5,Føie,Hafslund Kraft AS,Vannkraft,2026-06-22,2030-09-29,Heidi Hellesvik Ringstad,60
 26/03621,ELB2460,Samnanger TRA,Bergen og Haugalandet,NO5,Eviny Fornybar AS,Eviny Fornybar AS,Vannkraft,2026-05-26,2032-12-31,Marte Klavenes,165
 26/03653,ELB2382,Fortun KRA/TRA,Sogn og Sunnmøre,NO5,Linja AS,Hydro Energi AS,Vannkraft,2023-11-28,2029-03-29,Hans Olav Ween,48
-26/04119,ELB2982,Dale TRA,Bergen og Haugalandet,NO5,BKK AS,NJORD ENERGI HOLDING AS,Vannkraft,,2028-12-31,Marte Klavenes,7
+26/04119,ELB2982,Dale TRA,Bergen og Haugalandet,NO5,BKK AS,NJORD ENERGI HOLDING AS,Vannkraft,2026-07-02,2028-12-31,Marte Klavenes,7
 26/04120,ELB2886,Dalekvam TRA,Bergen og Haugalandet,NO5,Eviny Fornybar AS,Eviny Fornybar AS,Vannkraft,2026-09-28,2033-12-31,Marte Klavenes,355
