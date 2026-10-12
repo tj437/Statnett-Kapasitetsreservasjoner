@@ -108,15 +108,15 @@
 24/01827,ELB538,Samnanger TRA,Bergen og Haugalandet,NO5,BKK AS,Eviny Fornybar AS,Vannkraft,2026-05-26,2033-06-30,Marte Klavenes,128
 24/01844,ELB2023,Moskog TRA,Sogn og Sunnmøre,NO3,Linja AS,Re Energi AS,Vannkraft,2026-01-27,2028-11-17,Hans Olav Ween,29
 24/01883,ELB1731,Kolsvik KRA/TRA,Helgeland og Salten,NO4,Tensio AS,Kvernelva Kraft AS,Vannkraft,2025-05-30,2026-09-02,Christopher Aarnseth Ruud,6.1
-24/01885,ELB1808,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Stormvind AS,Annen produksjon,2025-05-15,2027-06-29,Geir Kåsa,5
+24/01885,ELB1808,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Stormvind AS,Batteri (innmating),2025-05-15,2027-06-29,Geir Kåsa,5
 24/01902,ELB225,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Pyur Energy AS,Solkraft,2025-08-22,2027-12-30,Karoline Josefine Gudbjerg,11
 24/01905,ELB227,Halden TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Pyur Energy AS,Solkraft,2025-06-24,2029-06-29,Karoline Josefine Gudbjerg,11
 24/01908,ELB593,Spanne TRA,Bergen og Haugalandet,NO2,Fagne AS,Hydro Rein Norway Holding AS (929 209 907),Vindkraft,2026-03-11,2034-06-30,Marte Klavenes,99
 25/01926,ELB806,Hasle TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,HybridTech AS,Solkraft,2025-05-25,2028-03-30,Karoline Josefine Gudbjerg,55.8
-25/01928,ELB1904,Bamble TRA,Telemark og Vestfold,NO2,Lede AS,Stormvind AS,Annen produksjon,2026-02-17,2026-12-30,Geir Kåsa,30
+25/01928,ELB1904,Bamble TRA,Telemark og Vestfold,NO2,Lede AS,Stormvind AS,Batteri (innmating),2026-02-17,2026-12-30,Geir Kåsa,30
 25/01936,ELB196,Hasle TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Solgrid AS,Solkraft,2026-05-21,2026-12-31,Karoline Josefine Gudbjerg,10
 25/01937,ELB312,Tegneby TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Solgrid AS,Solkraft,2025-10-26,2028-09-29,Karoline Josefine Gudbjerg,6
-25/01940,ELB1823,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Stormvind AS,Annen produksjon,2025-05-15,2027-09-29,Geir Kåsa,20
+25/01940,ELB1823,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Stormvind AS,Batteri (innmating),2025-05-15,2027-09-29,Geir Kåsa,20
 25/01959,ELB1067,Flesaker TRA,Telemark og Vestfold,NO1,Glitre Nett AS,HAFSLUND MAGNORA SOL AS,Solkraft,2025-09-17,2029-09-28,Heidi Hellesvik Ringstad,68
 25/01985,ELB1558,Kobbvatnet TRA,Helgeland og Salten,NO4,Statkraft Energi As,STATKRAFT ENERGI AS,Vannkraft,2025-06-15,2026-12-30,Ingvild Grøtterud Birkeland,30
 25/01987,ELB1819,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Hafslund Magnora AS,Solkraft,2025-04-09,2029-03-30,Geir Kåsa,6.6
@@ -147,7 +147,7 @@
 25/02764,ELB1052,Ertsmyra TS TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,CAPTIVA ENERGI AS,Vannkraft,2026-05-04,2034-06-30,Arne Utne,5.8
 25/02783,ELB1131,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Geisli Energi AS,Solkraft,2026-09-21,2031-12-31,Arne Utne,46.6
 25/02786,ELB1130,Flesaker TRA,Telemark og Vestfold,NO1,Glitre Nett AS,HAFSLUND MAGNORA SOL AS,Solkraft,2026-06-22,2030-09-29,Heidi Hellesvik Ringstad,25
-25/02903,ELB1388,Nes Bk TRA,Hallingdal og Ringerike,NO5,Glitre Nett AS,Stormvind AS,Annen produksjon,2026-06-22,2027-06-29,Heidi Hellesvik Ringstad,10
+25/02903,ELB1388,Nes Bk TRA,Hallingdal og Ringerike,NO5,Glitre Nett AS,Stormvind AS,Batteri (innmating),2026-06-22,2027-06-29,Heidi Hellesvik Ringstad,10
 25/02929,ELB1072,Haugsvær transformatorstasjon TRA,Bergen og Haugalandet,NO5,BKK AS,Småkraft AS,Vannkraft,2026-06-12,2030-12-31,Marte Klavenes,9.9
 25/02930,ELB1073,Haugsvær transformatorstasjon TRA,Bergen og Haugalandet,NO5,BKK AS,Småkraft AS,Vannkraft,2026-06-12,2030-12-31,Marte Klavenes,9.9
 25/02987,ELB1319,Dale TRA,Bergen og Haugalandet,NO5,BKK AS,Småkraft AS,Vannkraft,2026-07-02,2030-06-30,Marte Klavenes,15
