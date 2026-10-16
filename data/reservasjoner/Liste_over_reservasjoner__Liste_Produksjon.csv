@@ -85,8 +85,8 @@
 24/01686,ELB663,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Å Energi Vannkraft AS,Vannkraft,2026-03-15,2030-06-29,Arne Utne,25.5
 24/01687,ELB1152,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Å Energi Vannkraft AS,Vannkraft,2026-06-11,2030-05-30,Arne Utne,6
 24/01692,ELB1145,Kvinesdal TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Småkraftkonsult AS,Solkraft,2025-05-25,2027-06-29,Arne Utne,6
-24/01693,ELB1139,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Solkraft Sør AS,Solkraft,2025-05-25,2026-03-30,Arne Utne,6.5
-24/01694,ELB1119,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Solkraft Sør AS,Solkraft,2025-05-25,2025-09-29,Arne Utne,10
+24/01693,ELB1139,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,SOLKRAFT SØR AS,Solkraft,2025-05-25,2026-03-30,Arne Utne,6.5
+24/01694,ELB1119,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,SOLKRAFT SØR AS,Solkraft,2025-05-25,2025-09-29,Arne Utne,10
 24/01695,ELB1115,Kvinesdal TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,LISTER NYSKAPING AS,Solkraft,2025-05-25,2027-03-30,Arne Utne,7.5
 24/01697,ELB1121,Kvinesdal TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Fred. Olsen Renewables AS,Solkraft,2025-05-25,2027-03-30,Arne Utne,9.99
 24/01698,ELB660,Honna TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Å Energi Vannkraft AS,Vannkraft,2025-01-22,2028-12-30,Arne Utne,19
@@ -123,6 +123,7 @@
 25/02011,ELB56,Bardufoss Transformatorstasjon TRA,Nord,NO4,Arva AS,STATKRAFT ENERGI AS,Vannkraft,2025-02-18,2027-10-28,Lars Erik Johansen,10.2
 25/02037,ELB1390,Moskog TRA,Sogn og Sunnmøre,NO3,Linja AS,TINFOS AS,Vannkraft,2026-01-26,2028-04-30,Hans Olav Ween,7.3
 25/02052,ELB2386,Hof TRA,Telemark og Vestfold,NO2,Lede AS,GÅRDSKRAFT AS,Vannkraft,2026-03-03,2029-12-30,Geir Kåsa,6
+25/02061,ELB78,Nedre Røssåga KRA/TRA,Helgeland og Salten,NO4,Linea AS,Cadre,Vannkraft,2026-10-14,2031-06-29,Ingvild Grøtterud Birkeland,8
 25/02063,ELB476,Bjerkreim TRA,Sør Rogaland og Agder,NO2,Lnett AS,Statkraft Vind utvikling DA,Vindkraft,,2031-06-29,Arne Utne,25
 25/02096,ELB483,Kjelland TRA,Sør Rogaland og Agder,NO2,Lnett AS,Dalane Kraft AS,Vannkraft,2025-10-21,2030-01-01,Arne Utne,3.7
 25/02097,ELB481,Kjelland TRA,Sør Rogaland og Agder,NO2,Lnett AS,Dalane Kraft AS,Vannkraft,2025-10-21,2031-01-01,Arne Utne,10
