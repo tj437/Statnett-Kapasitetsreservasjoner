@@ -30,7 +30,7 @@
 21/00165,,Grenland TRA,Telemark og Vestfold,Lede AS,Klingstone AS,Datasenter,2025-12-21,Geir Kåsa,15,15,
 21/00170,,Kjelland TRA,Sør Rogaland og Agder,,Bane Nor Sf,Transport,2022-08-30,Arne Utne,22,22,
 21/00172,ELB125,Tegneby TRA,"Oslo, Akershus og Østfold",Elvia As,SI OSL 04 AS,Datasenter,2024-12-01,Karoline Josefine Gudbjerg,7,7,
-21/00176,,Kvinesdal TRA,Sør Rogaland og Agder,Glitre Nett AS,GE Healthcare,Industri,2022-06-29,Arne Utne,17,15,2
+21/00176,,Kvinesdal TRA,Sør Rogaland og Agder,Glitre Nett AS,GE Healthcare,Industri,2022-06-29,Arne Utne,15.2,5.2,10
 21/00179,,Svartisen KRA/TRA,Helgeland og Salten,Arva AS,Nscale,Datasenter,2022-06-26,Ingvild Grøtterud Birkeland,30,30,
 21/00185,,Porsgrunn TRA,Telemark og Vestfold,Herøya Nett As,Yara,Industri,2022-12-31,Geir Kåsa,26,26,
 21/00187,,Ulven TRA,"Oslo, Akershus og Østfold",Elvia As,Green Mountain AS,Datasenter,2025-11-19,Karoline Josefine Gudbjerg,15,15,
@@ -96,8 +96,8 @@
 23/01178,,Fræna TRA,Midt,Elinett AS,Troll Housing AS,Datasenter,2019-11-14,Hans Olav Ween,6,6,
 23/01179,,Fræna TRA,Midt,Elinett AS,Fjord1 AS,Transport,2020-11-11,Hans Olav Ween,5,5,
 23/01229,,Ørskog TRA,Sogn og Sunnmøre,,Plug AS,Transport,2022-09-19,Hans Olav Ween,20,20,
-23/01236,,Arendal TRA,Sør Rogaland og Agder,Glitre Nett AS,Morrow Batteries,Batteriproduksjon,2023-12-30,Arne Utne,3.3,3.3,
-23/01239,,Kristiansand TRA,Sør Rogaland og Agder,Glitre Nett AS,Kristiansand Havn KF - Gartnerløkka,Transport,2023-12-30,Arne Utne,9.3,9.3,
+23/01236,,Arendal TRA,Sør Rogaland og Agder,Glitre Nett AS,Morrow Batteries,Batteriproduksjon,2023-12-30,Arne Utne,15,15,
+23/01239,,Kristiansand TRA,Sør Rogaland og Agder,Glitre Nett AS,Kristiansand Havn KF - Gartnerløkka,Transport,2023-12-30,Arne Utne,14.3,14.3,
 24/01501,ELB478,Bærheim TRA,Sør Rogaland og Agder,Lnett AS,ASP Eiendom AS,Datasenter,2026-10-01,Arne Utne,3,3,
 24/01502,ELB486,Bærheim TRA,Sør Rogaland og Agder,Lnett AS,Avinor,Transport,2025-09-12,Arne Utne,2,2,
 24/01597,,Rjukan TRA,Telemark og Vestfold,Lede AS,Green Mountain AS,Datasenter,2025-06-29,Geir Kåsa,33,33,
