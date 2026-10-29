@@ -58,7 +58,7 @@
 22/00667,ELB2025,Ålfoten TRA,Sogn og Sunnmøre,NO3,Linja AS,Fortescue,Hydrogen/ammoniakk,2023-10-11,2029-06-28,Hans Olav Ween,300
 22/00673,,Vinnelys TRA,Nord,NO4,Vissi AS,Lerøy,Oppdrettsnæring,2023-10-30,2026-05-31,Lars Erik Johansen,5.6
 22/00686,ELB764,Melbu TRA,Nord,NO4,Noranett AS,Børøya,Industri,2023-02-06,2027-08-01,Lars Erik Johansen,4
-22/00692,,Kobbvatnet TRA,Helgeland og Salten,NO4,Kystnett As,Northern DC,Datasenter,2022-11-13,2028-11-30,Ingvild Grøtterud Birkeland,50
+22/00692,,Kobbvatnet TRA,Helgeland og Salten,NO4,Kystnett As,Northern DC,Datasenter,2022-11-13,2029-12-31,Ingvild Grøtterud Birkeland,50
 22/00695,ELB2202,Svartisen KRA/TRA,Helgeland og Salten,NO4,Arva AS,Neptun GGA,Hydrogen/ammoniakk,2023-06-30,2028-06-29,Ingvild Grøtterud Birkeland,20
 22/00696,,Sautso TRA,Nord,NO4,Vissi AS,Artic Core AS,Datasenter,2025-10-08,2026-05-31,Lars Erik Johansen,5
 22/00700,ELB1533,Ogndal TRA,Midt,NO3,Tensio AS,MM Follacell,Industri,2025-03-14,2029-10-01,Christopher Aarnseth Ruud,7
@@ -183,7 +183,7 @@
 25/02455,ELB769,Lødingen TRA,Nord,NO4,Noranett AS,LØDINGEN FISK AS,Oppdrettsnæring,2026-05-04,2027-05-31,Lars Erik Johansen,2.5
 25/02477,ELB793,Kilbotn TRA,Nord,NO4,Noranett AS,TROMS FYLKESKOMMUNE,Transport,2026-01-18,2027-02-28,Lars Erik Johansen,2.8
 25/02503,,Kobbvatnet TRA,Helgeland og Salten,NO4,Kystnett As,Statens Vegvesen,Transport,2022-11-13,2028-12-31,Ingvild Grøtterud Birkeland,3.5
-25/02504,,Kobbvatnet TRA,Helgeland og Salten,NO4,Kystnett As,TQC AS,Industri,2022-09-27,2028-06-30,Ingvild Grøtterud Birkeland,11
+25/02504,,Kobbvatnet TRA,Helgeland og Salten,NO4,Kystnett As,TQC AS,Industri,2022-09-27,2028-06-30,Ingvild Grøtterud Birkeland,7
 25/02523,ELB832,Spanne TRA,Bergen og Haugalandet,NO2,Fagne AS,atNorth AS,Datasenter,2026-03-27,2028-03-31,Marte Klavenes,120
 25/02544,ELB875,Nye Stokmarknes transformatorstasjon TRA,Nord,NO4,Noranett AS,AVINOR AS,Transport,2026-03-04,2030-09-30,Lars Erik Johansen,2.8
 25/02588,ELB892,Nye Stokmarknes transformatorstasjon TRA,Nord,NO4,Noranett AS,STOKMARKNES MILJØHAVN AS,Annet forbruk,2026-03-04,2026-09-30,Lars Erik Johansen,3
