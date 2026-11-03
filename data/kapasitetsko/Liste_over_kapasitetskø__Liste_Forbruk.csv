@@ -89,7 +89,6 @@
 25/02058,ELB58,Balsfjord TRA,Nord,NO4,Arva AS,Northern DC AS,Datasenter,2025-01-14,2032-02-27,Lars Erik Johansen,8
 25/02068,ELB1603,Tveiten TRA,Telemark og Vestfold,NO2,Lede AS,BONUM PROSJEKT 113 AS,Datasenter,2025-09-01,2029-06-29,Geir Kåsa,25
 25/02070,ELB1308,Minne TRA,Innlandet,NO1,Elvia As,NGB - Datasenter fase 2,Datasenter,2025-03-24,2025-12-30,Karoline Josefine Gudbjerg,4
-25/02075,ELB1500,Skaidi TRA,Nord,NO4,Area Nett AS,Pelagia,Datasenter,2025-04-09,2025-11-02,Lars Erik Johansen,10
 25/02078,ELB42,Salten transformatorstasjon TRA,Helgeland og Salten,NO4,Arva AS,ISE Utvikling AS,Hydrogen/ammoniakk,2023-11-17,2026-12-31,Ingvild Grøtterud Birkeland,5
 25/02082,ELB3215,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Elkem,Hydrogen/ammoniakk,2024-11-21,2028-12-01,Arne Utne,40
 25/02087,ELB136,Furuset TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Hafslund Celsio AS,Annet forbruk,2025-03-12,2027-11-30,Karoline Josefine Gudbjerg,6
@@ -222,7 +221,7 @@
 26/04139,ELB3088,Rød TRA,Telemark og Vestfold,NO2,Lede AS,NORTHERN DATA NOR AS,Datasenter,2026-09-28,2027-01-01,Geir Kåsa,20
 26/04149,ELB3059,Sylling TRA,Hallingdal og Ringerike,NO1,Glitre Nett AS,Chemring Nobel AS,Industri,2026-06-29,2029-07-01,Heidi Hellesvik Ringstad,100
 26/04199,ELB3106,Vardal TRA,Innlandet,NO1,Elvia As,Raufoss Næringspark ANS,Annet forbruk,2026-06-02,2027-04-01,Karoline Josefine Gudbjerg,9
-26/04237,ELB3119,Follo TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,KARMSUND GROUP AS,Annet forbruk,2026-08-03,2027-07-01,Karoline Josefine Gudbjerg,25
+26/04237,ELB3119,Follo TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Karmsund Group AS,Annet forbruk,2026-08-03,2027-07-01,Karoline Josefine Gudbjerg,25
 26/04291,ELB3220,Eidum TRA,Midt,NO3,Tensio AS,Verne Norway AS,Datasenter,2026-10-15,2030-01-01,Christopher Aarnseth Ruud,310
 26/04294,ELB3029,Lindås transformatorstasjon TRA,Bergen og Haugalandet,NO5,BKK AS,EQUINOR ASA,Petroleum,2026-06-25,2029-01-01,Marte Klavenes,40
 26/04359,ELB3254,Vardal TRA,Innlandet,NO1,Elvia As,Grønn 1 AS,Datasenter,2026-09-02,2030-01-01,Karoline Josefine Gudbjerg,650
