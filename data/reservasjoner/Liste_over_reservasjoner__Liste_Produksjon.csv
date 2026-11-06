@@ -71,7 +71,6 @@
 24/01560,ELB807,Hasle TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,HybridTech Fjeld Solkraftverk AS,Solkraft,2025-05-25,2028-06-29,Karoline Josefine Gudbjerg,55.8
 24/01567,ELB1805,Tveiten TRA,Telemark og Vestfold,NO2,Lede AS,Skagerak Kraft AS,Solkraft,2024-11-20,2029-12-30,Geir Kåsa,20.3
 24/01569,ELB2294,Grenland TRA,Telemark og Vestfold,NO2,Lede AS,S.D. Cappelen Skoger,Solkraft,2024-11-20,2026-12-31,Geir Kåsa,24
-24/01570,ELB2158,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Energeia AS,Solkraft,2024-11-20,2028-06-29,Geir Kåsa,23.7
 24/01576,ELB1833,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Skagerak Kraft AS,Solkraft,2024-11-20,2029-12-30,Geir Kåsa,15.1
 24/01591,ELB1416,Aura KRA/TRA,Midt,NO3,Statkraft Energi As,STATKRAFT ENERGI AS,Vannkraft,2024-12-18,2023-12-30,Hans Olav Ween,520
 24/01606,ELB2496,Sylling TRA,Hallingdal og Ringerike,NO1,Glitre Nett AS,Pyur Energy AS,Solkraft,2025-09-17,2028-06-28,Heidi Hellesvik Ringstad,20
@@ -116,7 +115,7 @@
 25/01937,ELB312,Tegneby TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Solgrid AS,Solkraft,2025-10-26,2028-09-29,Karoline Josefine Gudbjerg,6
 25/01940,ELB1823,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Stormvind AS,Batteri (innmating),2025-05-15,2027-09-29,Geir Kåsa,20
 25/01959,ELB1067,Flesaker TRA,Telemark og Vestfold,NO1,Glitre Nett AS,HAFSLUND MAGNORA SOL AS,Solkraft,2025-09-17,2029-09-28,Heidi Hellesvik Ringstad,68
-25/01985,ELB1558,Kobbvatnet TRA,Helgeland og Salten,NO4,Statkraft Energi As,STATKRAFT ENERGI AS,Vannkraft,2025-06-15,2026-12-30,Ingvild Grøtterud Birkeland,30
+25/01985,ELB1558,Kobbvatnet TRA,Helgeland og Salten,NO4,Statkraft Energi As,STATKRAFT ENERGI AS,Vannkraft,2025-06-15,2026-12-31,Ingvild Grøtterud Birkeland,30
 25/01987,ELB1819,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Hafslund Magnora AS,Solkraft,2025-04-09,2029-03-30,Geir Kåsa,6.6
 25/02037,ELB1390,Moskog TRA,Sogn og Sunnmøre,NO3,Linja AS,TINFOS AS,Vannkraft,2026-01-26,2028-04-30,Hans Olav Ween,7.3
 25/02052,ELB2386,Hof TRA,Telemark og Vestfold,NO2,Lede AS,GÅRDSKRAFT AS,Vannkraft,2026-03-03,2029-12-30,Geir Kåsa,6

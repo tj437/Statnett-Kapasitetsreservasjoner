@@ -4,7 +4,6 @@
 23/00933,ELB2197,Høyanger TRA,Sogn og Sunnmøre,NO3,Linja AS,Hydro Rein AS,Vindkraft,2025-09-01,2029-12-30,Hans Olav Ween,350
 23/00948,ELB1446,Rjukan TRA,Telemark og Vestfold,NO2,Statkraft Energi As,STATKRAFT ENERGI AS,Vannkraft,2025-03-10,2034-12-30,Geir Kåsa,720
 23/01128,ELB207,Minne TRA,Innlandet,NO1,Elvia As,Landinfra Energy Norway AS,Solkraft,2023-10-25,2028-03-30,Heidi Hellesvik Ringstad,184
-23/01137,ELB200,Minne TRA,Innlandet,NO1,Elvia As,Pyur Energy AS,Solkraft,2024-03-31,2025-05-31,Heidi Hellesvik Ringstad,12.3
 23/01160,ELB261,Vardal TRA,Innlandet,NO1,Elvia As,Energeia Øystadmarka AS,Solkraft,2024-04-29,2031-03-30,Heidi Hellesvik Ringstad,38
 23/01194,ELB176,Vang TRA,Innlandet,NO1,Elvia As,Energiea Bolstadmarka AS,Solkraft,2023-06-21,2026-04-30,Heidi Hellesvik Ringstad,81
 23/01308,ELB1550,Røldal KRA/TRA,Bergen og Haugalandet,NO2,Lyse Kraft DA,LYSE KRAFT DA,Vannkraft,2023-11-06,2032-03-30,Marte Klavenes,292
@@ -23,12 +22,10 @@
 24/01572,ELB1018,Vardal TRA,Innlandet,NO1,Elvia As,Zephyr AS,Vindkraft,2024-11-13,2032-12-30,Heidi Hellesvik Ringstad,295.2
 24/01580,ELB195,Minne TRA,Innlandet,NO1,Elvia As,HAFSLUND MAGNORA SOL AS,Solkraft,2024-08-13,2026-06-29,Heidi Hellesvik Ringstad,30
 24/01599,ELB182,Vang TRA,Innlandet,NO1,Elvia As,Innlandet Fornybar AS,Solkraft,2023-11-02,2029-09-29,Heidi Hellesvik Ringstad,40
-24/01609,ELB219,Minne TRA,Innlandet,NO1,Elvia As,Pyur Energy AS,Solkraft,2025-03-02,2026-09-30,Heidi Hellesvik Ringstad,7.2
 24/01673,ELB508,Rendalen transformatorstasjon TRA,Innlandet,NO1,Elvia As,NØK Forbybar AS,Solkraft,2024-06-02,2026-09-30,Heidi Hellesvik Ringstad,4
 24/01677,ELB141,Minne TRA,Innlandet,NO1,Elvia As,Løvhaugsåa Kraftverk AS,Vannkraft,2024-10-24,2028-12-30,Heidi Hellesvik Ringstad,1.5
 24/01702,ELB146,Vang TRA,Innlandet,NO1,Elvia As,Graupel Vind DA,Vindkraft,2024-07-04,2030-03-30,Heidi Hellesvik Ringstad,65
 24/01705,ELB2917,Fortun KRA/TRA,Sogn og Sunnmøre,NO5,Linja AS,Hydro Energi AS,Vannkraft,2024-02-29,2029-06-28,Hans Olav Ween,8.7
-24/01734,ELB228,Minne TRA,Innlandet,NO1,Elvia As,Pyur Energy AS,Solkraft,2024-12-04,2028-09-29,Heidi Hellesvik Ringstad,51
 24/01745,ELB2018,Ålfoten TRA,Sogn og Sunnmøre,NO3,Linja AS,SFE Produksjon AS,Vannkraft,2024-08-18,2030-01-30,Hans Olav Ween,118
 24/01746,ELB2925,Fortun KRA/TRA,Sogn og Sunnmøre,NO5,Linja AS,Årdal Energi Produksjon AS,Vannkraft,2024-07-09,2030-01-30,Hans Olav Ween,8
 24/01764,ELB198,Vardal TRA,Innlandet,NO1,Elvia As,Stormvind AS,Solkraft,2024-08-19,2027-03-30,Heidi Hellesvik Ringstad,12
@@ -82,7 +79,7 @@
 25/02603,ELB708,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Pyur Energy AS,Annen produksjon,2026-02-17,2027-10-01,Karoline Josefine Gudbjerg,11
 25/02616,ELB1448,Rjukan TRA,Telemark og Vestfold,NO2,Statkraft Energi As,STATKRAFT ENERGI AS,Vannkraft,2025-10-29,2034-10-01,Geir Kåsa,140
 25/02617,ELB835,Vardal TRA,Innlandet,NO1,Elvia As,GÅRDSKRAFT AS,Vannkraft,2026-10-21,2029-10-01,Heidi Hellesvik Ringstad,10
-25/02619,ELB963,Minne TRA,Innlandet,NO1,Elvia As,Pyur Energy AS,Solkraft,2025-11-24,2028-04-01,Heidi Hellesvik Ringstad,7.4
+25/02641,ELB952,Marka TRA,Helgeland og Salten,NO4,Linea AS,NORDIC WIND AS,Vindkraft,2026-10-13,2031-01-01,Ingvild Grøtterud Birkeland,760
 25/02675,ELB1033,Nye Stokmarknes transformatorstasjon TRA,Nord,NO4,Noranett AS,GRIDCORE ENERGY STORAGE AS,Batteri (innmating),2025-10-22,2026-04-01,Lars Erik Johansen,15
 25/02676,ELB859,Lyse TRA,Sør Rogaland og Agder,NO2,Lnett AS,LYSE KRAFT DA,Batteri (innmating),2026-05-20,2026-10-01,Arne Utne,35
 25/02681,ELB1037,Stølaheia TRA,Sør Rogaland og Agder,NO2,Lnett AS,UNCAP AS,Batteri (innmating),2026-01-13,2029-01-01,Arne Utne,70
@@ -99,7 +96,6 @@
 25/02961,ELB1398,Vang TRA,Innlandet,NO1,Elvia As,Energeia AS,Solkraft,2026-06-08,2028-10-01,Heidi Hellesvik Ringstad,67
 25/02962,ELB1302,Fåberg TRA,Innlandet,NO1,Elvia As,Pyur Energy AS,Annen produksjon,2026-02-17,2028-10-01,Karoline Josefine Gudbjerg,11.1
 25/03002,ELB1598,Vang TRA,Innlandet,NO1,Elvia As,Stormvind AS,Annen produksjon,2024-08-19,2026-01-01,Karoline Josefine Gudbjerg,20
-26/03085,ELB1304,Minne TRA,Innlandet,NO1,Elvia As,Pyur Energy AS,Annen produksjon,2026-02-24,2029-01-01,Karoline Josefine Gudbjerg,8
 26/03124,ELB1684,Minne TRA,Innlandet,NO1,Elvia As,Akershus Energi Vind AS,Vindkraft,2026-06-17,2033-04-01,Heidi Hellesvik Ringstad,58
 26/03176,ELB1846,Tveiten TRA,Telemark og Vestfold,NO2,Lede AS,Differ Energy AS,Solkraft,2025-12-07,2030-07-01,Geir Kåsa,10
 26/03203,ELB1327,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,SOLKRAFT SØR AS,Batteri (innmating),2026-03-06,2026-04-01,Arne Utne,10
@@ -109,7 +105,6 @@
 26/03316,ELB1355,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,SOLKRAFT SØR AS,Batteri (innmating),2026-05-04,2028-01-01,Arne Utne,6
 26/03323,ELB1250,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,SOLKRAFT SØR AS,Solkraft,2026-03-06,2028-01-01,Arne Utne,13.5
 26/03325,ELB1362,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,SOLKRAFT SØR AS,Batteri (innmating),2026-02-19,2028-01-01,Arne Utne,12
-26/03360,ELB1728,Minne TRA,Innlandet,NO1,Elvia As,Pyur Energy AS,Annen produksjon,2026-03-05,2027-04-01,Karoline Josefine Gudbjerg,7.2
 26/03390,ELB2092,Spanne TRA,Bergen og Haugalandet,NO2,Fagne AS,EVINY AS,Vindkraft,2026-06-24,2030-07-01,Marte Klavenes,100
 26/03399,ELB1675,Hol 1 KRA/TRA,Hallingdal og Ringerike,NO5,Føie,Hafslund Kraft AS,Vannkraft,2026-07-02,2033-04-01,Heidi Hellesvik Ringstad,94
 26/03437,ELB2105,Vardal TRA,Innlandet,NO1,Elvia As,Energeia AS,Solkraft,2026-04-14,2028-10-01,Heidi Hellesvik Ringstad,10
