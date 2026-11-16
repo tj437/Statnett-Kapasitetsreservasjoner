@@ -34,7 +34,7 @@
 21/00371,ELB1730,Åfjord TRA,Midt,NO3,Tensio AS,Vikingbase,Oppdrettsnæring,2023-12-06,2027-12-31,Christopher Aarnseth Ruud,15.7
 21/00385,ELB126,Hasle TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Borregaard AS,Industri,2023-12-07,2029-01-30,Karoline Josefine Gudbjerg,35
 21/00397,ELB1903,Rjukan TRA,Telemark og Vestfold,NO2,Lede AS,NORSK HYDROGEN AS,Hydrogen/ammoniakk,2021-09-28,2028-06-29,Geir Kåsa,35
-21/00400,,Flesaker TRA,Telemark og Vestfold,NO1,Glitre Nett AS,Drammen fjernvarme,Industri,2023-03-15,2025-12-30,Heidi Hellesvik Ringstad,11
+21/00400,,Flesaker TRA,Telemark og Vestfold,NO1,Glitre Nett AS,Drammen fjernvarme,Industri,2023-03-15,2030-12-30,Heidi Hellesvik Ringstad,5
 21/00434,ELB36,Svartisen KRA/TRA,Helgeland og Salten,NO4,Arva AS,Helgeland Smolt AS,Oppdrettsnæring,2023-06-30,2028-09-29,Ingvild Grøtterud Birkeland,6.3
 21/00435,ELB39,Svartisen KRA/TRA,Helgeland og Salten,NO4,Arva AS,Nova Sea,Oppdrettsnæring,2023-06-30,2026-12-31,Ingvild Grøtterud Birkeland,13
 21/00437,,Trollheim KRA/TRA,Midt,NO3,Tensio AS,Wäcker Chemicals,Industri,2022-06-09,2031-12-30,Christopher Aarnseth Ruud,15.5
@@ -54,7 +54,7 @@
 22/00625,ELB750,Hinnøy,Nord,NO4,Noranett AS,Andfjord Salmon,Oppdrettsnæring,2023-02-20,2027-06-24,Lars Erik Johansen,5.6
 22/00630,ELB758,Boltåsen transformatorstasjon TRA,Nord,NO4,Noranett AS,Rødskjær,Industri,2023-01-02,2027-05-31,Lars Erik Johansen,15
 22/00635,ELB130,Tegneby TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Hafslund Celsio AS,Industri,2023-11-19,2027-12-30,Karoline Josefine Gudbjerg,41
-22/00654,ELB3954,Vågåmo TRA,Innlandet,NO3,Fjellnett As,Ugna Properties AS,Datasenter,2026-09-07,,Karoline Josefine Gudbjerg,10
+22/00654,ELB3954,Vågåmo TRA,Innlandet,NO3,Fjellnett As,Ugna Properties AS,Datasenter,2026-09-07,2035-12-30,Karoline Josefine Gudbjerg,10
 22/00665,ELB2208,Svartisen KRA/TRA,Helgeland og Salten,NO4,Arva AS,Nscale,Datasenter,2025-10-02,2027-06-30,Ingvild Grøtterud Birkeland,30
 22/00667,ELB2025,Ålfoten TRA,Sogn og Sunnmøre,NO3,Linja AS,Fortescue,Hydrogen/ammoniakk,2023-10-11,2029-06-28,Hans Olav Ween,300
 22/00673,,Vinnelys TRA,Nord,NO4,Vissi AS,Lerøy,Oppdrettsnæring,2023-10-30,2026-05-31,Lars Erik Johansen,5.6
@@ -106,13 +106,13 @@
 23/01250,ELB1848,Brokke KRA/TRA,Sør Rogaland og Agder,NO2,Lede AS,EdgeConneX MCN Norway AS,Datasenter,2024-10-29,2027-03-30,Geir Kåsa,140
 23/01257,ELB462,Fagrafjell TRA,Sør Rogaland og Agder,NO2,Lnett AS,Green Mountain,Datasenter,2024-09-12,2031-12-31,Arne Utne,300
 23/01263,ELB113,Smestad TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Oslo Havn KF,Transport,2024-10-23,2026-06-29,Karoline Josefine Gudbjerg,14
-23/01304,ELB1054,Ringerike TRA,Hallingdal og Ringerike,NO1,Glitre Nett AS,Odin Green DC AS,Datasenter,2024-09-25,2026-09-29,Heidi Hellesvik Ringstad,15
+23/01304,ELB1054,Ringerike TRA,Hallingdal og Ringerike,NO1,Glitre Nett AS,Odin Green DC AS,Datasenter,2024-09-25,2026-12-30,Heidi Hellesvik Ringstad,15
 23/01351,ELB682,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Bulk,Datasenter,2026-05-21,2026-09-30,Arne Utne,25
 23/01362,ELB48,Mestervik,Nord,NO4,Arva AS,FJUEL TROMSØ AS,Transport,2026-02-22,2026-03-31,Lars Erik Johansen,5
 23/01370,ELB1056,Ringerike TRA,Hallingdal og Ringerike,NO1,Glitre Nett AS,Green Mountain AS,Datasenter,2024-09-25,2027-09-29,Heidi Hellesvik Ringstad,18.5
 23/01371,ELB291,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Ruter AS,Transport,2025-04-25,2028-09-29,Karoline Josefine Gudbjerg,6
 23/01372,ELB112,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,SI OSL 03.2 AS,Datasenter,2025-10-13,2033-06-29,Karoline Josefine Gudbjerg,32
-23/01400,ELB148,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,atNorth AS,Datasenter,2025-10-13,2028-03-30,Karoline Josefine Gudbjerg,50
+23/01400,ELB148,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,atNorth AS,Datasenter,2025-10-13,2029-12-30,Karoline Josefine Gudbjerg,50
 23/01412,ELB740,Kollsnes KRA/TRA,Bergen og Haugalandet,NO5,BKK AS,H2 Production AS,Hydrogen/ammoniakk,2024-03-19,2028-12-31,Marte Klavenes,9
 23/01413,ELB732,Lindås transformatorstasjon TRA,Bergen og Haugalandet,NO5,BKK AS,SkiGA AS Org. Nr. 929 597311,Hydrogen/ammoniakk,2024-03-19,2028-06-30,Marte Klavenes,130
 23/01414,ELB735,Lindås transformatorstasjon TRA,Bergen og Haugalandet,NO5,BKK AS,Mongstad Eiendomsselskap,Oppdrettsnæring,2024-03-19,2028-06-30,Marte Klavenes,40
@@ -154,7 +154,7 @@
 24/01882,ELB669,Ertsmyra TS TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Tonstad Datapark AS,Datasenter,2025-09-29,2031-06-29,Arne Utne,300
 24/01886,ELB1789,Rjukan TRA,Telemark og Vestfold,NO2,Lede AS,Statkraft,Annet forbruk,2025-02-12,2030-09-29,Geir Kåsa,8
 24/01894,ELB1058,Ringerike TRA,Hallingdal og Ringerike,NO1,Glitre Nett AS,atNorth AS,Datasenter,2025-10-09,2032-12-30,Heidi Hellesvik Ringstad,30
-24/01904,ELB132,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Coop Norge SA,Transport,2026-03-05,2026-06-29,Karoline Josefine Gudbjerg,5
+24/01904,ELB132,Frogner TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Coop Norge SA,Transport,2026-03-05,2026-12-30,Karoline Josefine Gudbjerg,5
 24/01915,ELB762,Kilbotn TRA,Nord,NO4,Noranett AS,Nordic Bioenergy AS,Industri,2026-09-16,2027-02-28,Lars Erik Johansen,4.99
 25/01925,ELB2215,Rana KRA/TRA,Helgeland og Salten,NO4,Linea AS,Freyr / T1 Energy,Datasenter,,2027-12-31,Ingvild Grøtterud Birkeland,50
 25/01986,ELB766,Narvik TRA,Nord,NO4,Noranett AS,Narvikfjellet Allmen AS,Industri,2025-08-20,2028-01-31,Lars Erik Johansen,8.5
@@ -177,8 +177,8 @@
 25/02185,ELB102,Kolsvik KRA/TRA,Helgeland og Salten,NO4,Linea AS,Vevelstad Settefisk AS,Oppdrettsnæring,2024-02-08,2025-06-29,Ingvild Grøtterud Birkeland,5
 25/02221,ELB343,Kolsvik KRA/TRA,Helgeland og Salten,NO4,Linea AS,AKVAFUTURE AS,Oppdrettsnæring,2026-03-24,2029-03-30,Ingvild Grøtterud Birkeland,2.5
 25/02311,ELB490,Fagrafjell TRA,Sør Rogaland og Agder,NO2,Lnett AS,MS Kvål,Datasenter,2024-05-27,2027-12-31,Arne Utne,25
-25/02315,ELB460,Fagrafjell TRA,Sør Rogaland og Agder,NO2,Lnett AS,Norwegian Hydrogen,Hydrogen/ammoniakk,2024-05-27,2025-12-31,Arne Utne,10
-25/02320,ELB458,Stølaheia TRA,Sør Rogaland og Agder,NO2,Lnett AS,Stavanger Havn,Transport,2024-05-22,2025-12-31,Arne Utne,24
+25/02315,ELB460,Fagrafjell TRA,Sør Rogaland og Agder,NO2,Lnett AS,Norwegian Hydrogen,Hydrogen/ammoniakk,2024-05-27,2028-06-29,Arne Utne,10
+25/02320,ELB458,Stølaheia TRA,Sør Rogaland og Agder,NO2,Lnett AS,Stavanger Havn,Transport,2024-05-22,2027-12-30,Arne Utne,24
 25/02325,ELB484,Stølaheia TRA,Sør Rogaland og Agder,NO2,Lnett AS,Green Mountain AS,Datasenter,2024-05-22,2032-03-31,Arne Utne,12.5
 25/02365,ELB570,Fagrafjell TRA,Sør Rogaland og Agder,NO2,Lnett AS,GREEN HORIZON AS,Datasenter,2024-05-26,,Arne Utne,4
 25/02396,ELB1545,Husnes TRA,Bergen og Haugalandet,NO2,Hydro Aluminium As,Hydro Aluminium AS,Industri,2026-06-04,2028-12-31,Marte Klavenes,33
