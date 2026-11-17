@@ -40,7 +40,7 @@
 21/00437,,Trollheim KRA/TRA,Midt,NO3,Tensio AS,Wäcker Chemicals,Industri,2022-06-09,2031-12-30,Christopher Aarnseth Ruud,15.5
 21/00441,ELB2031,Moskog TRA,Sogn og Sunnmøre,NO3,Linja AS,Bulandet Miljøfisk,Oppdrettsnæring,2026-08-26,2028-10-01,Hans Olav Ween,4
 21/00460,ELB1534,Tunnsjødal KRA/TRA,Midt,NO4,Tensio AS,Exanorth AS,Datasenter,2022-01-06,2026-12-31,Christopher Aarnseth Ruud,70
-21/00471,ELB72,Marka TRA,Helgeland og Salten,NO4,Linea AS,Exanext AS,Datasenter,2025-12-21,2026-12-31,Ingvild Grøtterud Birkeland,23
+21/00471,ELB72,Marka TRA,Helgeland og Salten,NO4,Linea AS,Exanext AS,Datasenter,2025-12-21,2033-12-30,Ingvild Grøtterud Birkeland,23
 21/00475,ELB229,Marka TRA,Helgeland og Salten,NO4,Linea AS,Alcoa Mosjøen,Industri,2024-02-09,2027-09-30,Ingvild Grøtterud Birkeland,41
 22/00516,ELB1174,Eidum TRA,Midt,NO3,Tensio AS,Meråker Hydrogen AS,Hydrogen/ammoniakk,2023-12-06,2027-10-01,Christopher Aarnseth Ruud,9.2
 22/00533,ELB35,Bardufoss Transformatorstasjon TRA,Nord,NO4,Arva AS,Finnfjord AS,Industri,2025-10-08,2031-06-30,Lars Erik Johansen,60
@@ -141,8 +141,8 @@
 24/01721,ELB480,Bærheim TRA,Sør Rogaland og Agder,NO2,Lnett AS,Asp Eiendom AS,Datasenter,2024-10-16,2031-12-30,Arne Utne,8
 24/01744,ELB2053,Moskog TRA,Sogn og Sunnmøre,NO3,Linja AS,Nordfjord Havn IKS,Transport,2025-11-12,2028-04-27,Hans Olav Ween,12
 24/01748,ELB813,Litle Sotra TRA,Bergen og Haugalandet,NO5,BKK AS,Tresmarka AS,Transport,2025-05-06,2035-12-31,Marte Klavenes,30
-24/01755,ELB80,Marka TRA,Helgeland og Salten,NO4,Linea AS,Gen2 energy,Hydrogen/ammoniakk,2025-12-21,2028-06-29,Ingvild Grøtterud Birkeland,195
-24/01756,ELB75,Marka TRA,Helgeland og Salten,NO4,Linea AS,Norsk E-fuel,Industri,2025-12-21,2028-06-29,Ingvild Grøtterud Birkeland,90
+24/01755,ELB80,Marka TRA,Helgeland og Salten,NO4,Linea AS,Gen2 energy,Hydrogen/ammoniakk,2025-12-21,2033-12-30,Ingvild Grøtterud Birkeland,195
+24/01756,ELB75,Marka TRA,Helgeland og Salten,NO4,Linea AS,Norsk E-fuel,Industri,2025-12-21,2033-12-30,Ingvild Grøtterud Birkeland,90
 24/01770,ELB156,Tegneby TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Larkollveien 4 AS,Datasenter,2025-08-28,2027-09-29,Karoline Josefine Gudbjerg,50
 24/01774,ELB1057,Ringerike TRA,Hallingdal og Ringerike,NO1,Glitre Nett AS,Stack AS,Datasenter,2025-03-20,2027-12-30,Heidi Hellesvik Ringstad,100
 24/01783,ELB2930,Leirdøla (LEX) TRA,Sogn og Sunnmøre,NO5,Sygnir AS,Gaupne Utvikling AS,Datasenter,2026-05-28,2028-12-30,Hans Olav Ween,120
