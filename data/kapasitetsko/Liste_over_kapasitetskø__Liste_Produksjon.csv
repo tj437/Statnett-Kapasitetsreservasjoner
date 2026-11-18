@@ -27,7 +27,6 @@
 24/01677,ELB141,Minne TRA,Innlandet,NO1,Elvia As,Løvhaugsåa Kraftverk AS,Vannkraft,2024-10-24,2028-12-30,Karoline Josefine Gudbjerg,1.5
 24/01702,ELB146,Vang TRA,Innlandet,NO1,Elvia As,Graupel Vind DA,Vindkraft,2024-07-04,2030-03-30,Karoline Josefine Gudbjerg,65
 24/01705,ELB2917,Fortun KRA/TRA,Sogn og Sunnmøre,NO5,Linja AS,Hydro Energi AS,Vannkraft,2024-02-29,2029-06-28,Hans Olav Ween,8.7
-24/01745,ELB2018,Ålfoten TRA,Sogn og Sunnmøre,NO3,Linja AS,SFE Produksjon AS,Vannkraft,2024-08-18,2030-01-30,Hans Olav Ween,118
 24/01746,ELB2925,Fortun KRA/TRA,Sogn og Sunnmøre,NO5,Linja AS,Årdal Energi Produksjon AS,Vannkraft,2024-07-09,2030-01-30,Hans Olav Ween,8
 24/01764,ELB198,Vardal TRA,Innlandet,NO1,Elvia As,Stormvind AS,Solkraft,2024-08-19,2027-03-30,Karoline Josefine Gudbjerg,12
 24/01765,ELB154,Vang TRA,Innlandet,NO1,Elvia As,Hafslund Kraft AS,Vannkraft,2024-09-13,2028-01-01,Karoline Josefine Gudbjerg,10
@@ -72,6 +71,7 @@
 25/02358,ELB2200,Høyanger TRA,Sogn og Sunnmøre,NO3,Linja AS,STATKRAFT ENERGI AS,Vannkraft,2025-12-10,2035-12-30,Hans Olav Ween,250
 25/02368,ELB496,Minne TRA,Innlandet,NO1,Elvia As,Eidsiva Hafslund Vind DA,Vindkraft,2026-02-26,2032-04-01,Karoline Josefine Gudbjerg,144
 25/02402,,Fortun KRA/TRA,Sogn og Sunnmøre,NO5,Linja AS,Offerdal Kraftverk AS,Vannkraft,2024-05-29,2028-03-31,Hans Olav Ween,2
+25/02406,ELB648,Nedre Røssåga KRA/TRA,Helgeland og Salten,NO4,Linea AS,BLÅFALL ENERGI AS,Vannkraft,2026-09-17,2030-01-01,Ingvild Grøtterud Birkeland,25
 25/02410,ELB555,Samnanger TRA,Bergen og Haugalandet,NO5,BKK AS,ALDAL KRAFT AS,Vannkraft,2026-09-28,2025-10-01,Marte Klavenes,5.5
 25/02413,ELB1124,Flesaker TRA,Telemark og Vestfold,NO1,Glitre Nett AS,HAFSLUND MAGNORA SOL AS,Solkraft,2024-10-11,2029-06-01,Heidi Hellesvik Ringstad,30.6
 25/02426,ELB1229,Kvinesdal TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,UNCAP AS,Batteri (innmating),2025-09-22,2028-03-31,Arne Utne,120

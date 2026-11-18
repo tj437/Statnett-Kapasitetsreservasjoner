@@ -72,7 +72,7 @@
 24/01567,ELB1805,Tveiten TRA,Telemark og Vestfold,NO2,Lede AS,Skagerak Kraft AS,Solkraft,2024-11-20,2029-12-30,Geir Kåsa,20.3
 24/01569,ELB2294,Grenland TRA,Telemark og Vestfold,NO2,Lede AS,S.D. Cappelen Skoger,Solkraft,2024-11-20,2026-12-31,Geir Kåsa,24
 24/01576,ELB1833,Rød TRA,Telemark og Vestfold,NO2,Lede AS,Skagerak Kraft AS,Solkraft,2024-11-20,2029-12-30,Geir Kåsa,15.1
-24/01591,ELB1416,Aura KRA/TRA,Midt,NO3,Statkraft Energi As,STATKRAFT ENERGI AS,Vannkraft,2024-12-18,2023-12-30,Hans Olav Ween,520
+24/01591,ELB1416,Aura KRA/TRA,Midt,NO3,Statkraft Energi As,STATKRAFT ENERGI AS,Vannkraft,2024-12-18,2032-12-30,Hans Olav Ween,520
 24/01606,ELB2496,Sylling TRA,Hallingdal og Ringerike,NO1,Glitre Nett AS,Pyur Energy AS,Solkraft,2025-09-17,2028-06-28,Heidi Hellesvik Ringstad,20
 24/01637,ELB1554,Nes Bk TRA,Hallingdal og Ringerike,NO5,Hafslund Kraft As,Hafslund Kraft AS,Vannkraft,2025-06-15,2029-08-31,Heidi Hellesvik Ringstad,80
 24/01645,ELB138,Halden TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Aremark sør DA,Vindkraft,2026-05-07,,Karoline Josefine Gudbjerg,210
@@ -90,6 +90,7 @@
 24/01709,ELB217,Tegneby TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Stormvind AS,Solkraft,2025-08-28,2028-06-29,Karoline Josefine Gudbjerg,12
 24/01719,ELB491,Åna-Sira KRA/TRA,Sør Rogaland og Agder,NO2,Lnett AS,Norsk Vind,Vindkraft,2026-01-13,2028-09-30,Arne Utne,40
 24/01743,ELB1983,Ørsta TRA,Sogn og Sunnmøre,NO3,Linja AS,Tussa Energi AS,Vannkraft,2026-05-28,2030-06-29,Hans Olav Ween,150
+24/01745,ELB2018,Ålfoten TRA,Sogn og Sunnmøre,NO3,Linja AS,SFE Produksjon AS,Vannkraft,2026-11-17,2030-12-30,Hans Olav Ween,118
 24/01760,ELB1537,Blåfalli,Bergen og Haugalandet,NO2,Sunnhordland Kraftlag As,Sunnhordland Kraftlag AS,Vannkraft,2024-10-28,2029-10-22,Marte Klavenes,185
 24/01768,ELB1837,Hof TRA,Telemark og Vestfold,NO2,Lede AS,HAFSLUND MAGNORA SOL AS,Solkraft,2025-04-09,2027-12-30,Geir Kåsa,34.5
 24/01771,ELB1811,Hof TRA,Telemark og Vestfold,NO2,Lede AS,HAFSLUND MAGNORA SOL AS,Solkraft,2025-04-09,2029-06-29,Geir Kåsa,12.3
