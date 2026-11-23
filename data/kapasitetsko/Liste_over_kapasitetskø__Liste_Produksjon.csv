@@ -97,7 +97,6 @@
 25/02938,ELB1478,Verdal TRA,Midt,NO3,Tensio AS,NTE ENERGI AS,Vannkraft,2026-05-18,2033-04-01,Christopher Aarnseth Ruud,20
 25/02939,ELB1479,Verdal TRA,Midt,NO3,Tensio AS,NTE ENERGI AS,Vannkraft,2026-05-13,2032-04-01,Christopher Aarnseth Ruud,22
 25/02961,ELB1398,Vang TRA,Innlandet,NO1,Elvia As,Energeia AS,Solkraft,2026-06-08,2028-10-01,Karoline Josefine Gudbjerg,67
-25/02962,ELB1302,Fåberg TRA,Innlandet,NO1,Elvia As,Pyur Energy AS,Annen produksjon,2026-02-17,2028-10-01,Karoline Josefine Gudbjerg,11.1
 25/03002,ELB1598,Vang TRA,Innlandet,NO1,Elvia As,Stormvind AS,Annen produksjon,2024-08-19,2026-01-01,Karoline Josefine Gudbjerg,20
 26/03124,ELB1684,Minne TRA,Innlandet,NO1,Elvia As,Akershus Energi Vind AS,Vindkraft,2026-06-17,2033-04-01,Karoline Josefine Gudbjerg,58
 26/03176,ELB1846,Tveiten TRA,Telemark og Vestfold,NO2,Lede AS,Differ Energy AS,Solkraft,2025-12-07,2030-07-01,Geir Kåsa,10
@@ -127,7 +126,7 @@
 26/04012,ELB2920,Borgund KRA/TRA,Hallingdal og Ringerike,NO5,Sygnir AS,Småkraft AS,Vannkraft,2026-02-25,2029-10-01,Hans Olav Ween,8.5
 26/04060,ELB2913,Samnanger TRA,Bergen og Haugalandet,NO5,BKK AS,MOBERG ENERGI AS,Vannkraft,2026-09-15,2029-04-01,Marte Klavenes,6.2
 26/04102,ELB3013,Grenland TRA,Telemark og Vestfold,NO2,Lede AS,VESTMAR NETT AS,Vindkraft,2026-08-26,2033-10-01,Geir Kåsa,80
-26/04236,ELB3120,Follo TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,Karmsund Group AS,Annen produksjon,2026-08-03,2027-07-01,Karoline Josefine Gudbjerg,25
+26/04236,ELB3120,Follo TRA,"Oslo, Akershus og Østfold",NO1,Elvia As,KARMSUND GROUP AS,Annen produksjon,2026-08-03,2027-07-01,Karoline Josefine Gudbjerg,25
 26/04343,ELB3347,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,KRISTIANSAND HAVN IKS,Batteri (innmating),2026-09-07,2030-01-01,Arne Utne,30
 26/04392,ELB3225,Vågåmo TRA,Innlandet,NO3,Fjellnett As,BLÅFALL AS,Vannkraft,2026-10-26,2028-07-01,Karoline Josefine Gudbjerg,7.3
 26/04661,ELB3753,Aurland 2 KRA/TRA,Hallingdal og Ringerike,NO5,Sygnir AS,AURLAND ENERGIVERK AS,Vannkraft,2026-09-24,2027-10-01,Hans Olav Ween,3.5
