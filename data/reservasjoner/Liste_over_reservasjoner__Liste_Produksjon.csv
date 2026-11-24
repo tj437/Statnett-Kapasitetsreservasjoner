@@ -34,7 +34,7 @@
 23/01008,ELB92,Marka TRA,Helgeland og Salten,NO4,Linea AS,Miljøkraft Helgeland / MIP Miljøkraft,Vannkraft,2024-08-06,2027-12-31,Ingvild Grøtterud Birkeland,9.2
 23/01009,ELB81,Kolsvik KRA/TRA,Helgeland og Salten,NO4,Linea AS,Forte Vannkraft,Vannkraft,2024-08-06,2025-06-30,Ingvild Grøtterud Birkeland,5.5
 23/01033,ELB1553,Hemsil 2 KRA/TRA,Hallingdal og Ringerike,NO5,Hafslund Kraft As,Hafslund Kraft AS,Vannkraft,2024-02-21,2028-12-31,Heidi Hellesvik Ringstad,83
-23/01035,ELB2919,Borgund KRA/TRA,Hallingdal og Ringerike,NO5,Sygnir AS,Østfold Energi AS,Vannkraft,2024-02-15,2026-06-29,Hans Olav Ween,15.5
+23/01035,ELB2919,Borgund KRA/TRA,Hallingdal og Ringerike,NO5,Sygnir AS,Østfold Energi AS,Vannkraft,2024-02-15,2027-09-29,Hans Olav Ween,15.5
 23/01037,ELB1585,Aurland 1 KRA/TRA,Hallingdal og Ringerike,NO5,Hafslund Kraft As,Hafslund Eco Vannkraft AS,Vannkraft,2025-03-06,2031-12-31,Hans Olav Ween,620
 23/01078,ELB550,Lindås transformatorstasjon TRA,Bergen og Haugalandet,NO5,BKK AS,General Electric,Vindkraft,2023-08-22,2028-03-31,Marte Klavenes,18
 23/01090,,Håvik TRA,Bergen og Haugalandet,NO2,Energidepartementet,Havvindaktører,Offshore vind,2022-12-30,2030-12-30,Marte Klavenes,500
@@ -89,7 +89,7 @@
 24/01719,ELB491,Åna-Sira KRA/TRA,Sør Rogaland og Agder,NO2,Lnett AS,Norsk Vind,Vindkraft,2026-01-13,2028-09-30,Arne Utne,40
 24/01743,ELB1983,Ørsta TRA,Sogn og Sunnmøre,NO3,Linja AS,Tussa Energi AS,Vannkraft,2026-05-28,2030-06-29,Hans Olav Ween,150
 24/01745,ELB2018,Ålfoten TRA,Sogn og Sunnmøre,NO3,Linja AS,SFE Produksjon AS,Vannkraft,2026-11-17,2030-12-30,Hans Olav Ween,118
-24/01760,ELB1537,Blåfalli,Bergen og Haugalandet,NO2,Sunnhordland Kraftlag As,Sunnhordland Kraftlag AS,Vannkraft,2024-10-28,2029-10-22,Marte Klavenes,185
+24/01760,ELB1537,Blåfalli,Bergen og Haugalandet,NO2,Sunnhordland Kraftlag As,SUNNHORDLAND KRAFTLAG AS,Vannkraft,2024-10-28,2029-10-22,Marte Klavenes,185
 24/01768,ELB1837,Hof TRA,Telemark og Vestfold,NO2,Lede AS,HAFSLUND MAGNORA SOL AS,Solkraft,2025-04-09,2027-12-30,Geir Kåsa,34.5
 24/01771,ELB1811,Hof TRA,Telemark og Vestfold,NO2,Lede AS,HAFSLUND MAGNORA SOL AS,Solkraft,2025-04-09,2029-06-29,Geir Kåsa,12.3
 24/01773,ELB1136,Kristiansand TRA,Sør Rogaland og Agder,NO2,Glitre Nett AS,Å Energi Vannkraft AS,Vannkraft,2026-03-18,2030-12-30,Arne Utne,5
